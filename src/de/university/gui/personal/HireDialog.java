@@ -1,5 +1,6 @@
 package de.university.gui.personal;
 
+import de.university.data.professors.Prof;
 import de.university.gui.GUI;
 
 import javax.swing.*;
@@ -12,6 +13,7 @@ public class HireDialog extends JDialog {
     private JLabel[] titles = new JLabel[6];
     private JPanel pane;
     private JScrollPane sPane;
+    private PersonalDialog dialog;
     private Font font = new Font("Monospace", Font.BOLD, 25);
     //----methods----
 
@@ -48,12 +50,15 @@ public class HireDialog extends JDialog {
         colums.add(titles[5]);
         //
         //TODO get professors from Data
+
+        pane.add(new HireingTableRow(new Prof("test", 200, 2, 4, ""), gui, this.dialog, this));
     }
 
     //----constructor----
-    public HireDialog(GUI gui){
+    public HireDialog(GUI gui, PersonalDialog dialog){
         super();
         this.gui = gui;
+        this.dialog = dialog;
         this.setMinimumSize(new Dimension(700,800));
         this.setPreferredSize(new Dimension(700,800));
         this.setLocationRelativeTo(this.gui);
