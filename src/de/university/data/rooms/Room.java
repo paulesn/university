@@ -80,11 +80,11 @@ public abstract class Room {
         this.benefits = benefits;
     }
 
-    public int getInfo() {
+    public String getInfo() {
         return info;
     }
 
-    public void setInfo(int info) {
+    public void setInfo(String info) {
         this.info = info;
     }
 
