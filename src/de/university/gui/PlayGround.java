@@ -70,7 +70,7 @@ public class PlayGround extends JPanel {
      * @param coordX
      * @param coordY
      */
-    private void clicked(int coordX, int coordY) {
+    private void clicked(int coordY, int coordX) {
         gui.clearMarking();
         if (currentX == coordX) {
             if (currentY == coordY) {
@@ -113,7 +113,6 @@ public class PlayGround extends JPanel {
         this.data = gui.getData();
         this.builder = gui.getBuilder();
         this.setLayout(new GridLayout(x, x));
-        for (int i = 0; i != x; ++i) {
         for (int i = 0; i != x; ++i) {
             for (int o = 0; o != x; ++o) {
                 field[i][o] = new JButton();
