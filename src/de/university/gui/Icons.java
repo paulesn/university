@@ -51,13 +51,9 @@ public class Icons {
                 break;
         }
 
-        for(int i=0; i<sizex; i++){
-            for(int j=0; j<sizey; j++){
-                image.getImagePiece(i,j);
-                String path=room.getPath()+"-"+i"-"+y+".png";
-                ImageIcon icon = new ImageIcon(path);
-                return icon;
-            }
-        }
+        image.getImagePiece(y,x);
+        String path=room.getPath()+"-"+x"-"+y+".png";
+        ImageIcon icon = new ImageIcon(path);
+        return icon;
     }
 }
