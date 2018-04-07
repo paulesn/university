@@ -2,7 +2,7 @@ package de.university.data.rooms;
 
 import de.university.data.RoomSize;
 
-public abstract class Wohnheim extends Room{
+public class Wohnheim extends Room{
     //----constructor----
 	
 	public Wohnheim(){
@@ -14,6 +14,6 @@ public abstract class Wohnheim extends Room{
 		this.setStudentCapacity(0);
 		this.setProfCapacity(0);
 		this.setBenefits("");
-		this.setInfo("Dient dem Studenten zum Wohnen. Erhoet die Wohlfühlpunkte um "+ this.getWellbeingBonus() + ".\nKostet: " + this.getCosts())
-
+		this.setInfo("Dient dem Studenten zum Wohnen. Erhoet die Wohlfühlpunkte um "+ this.getWellbeingBonus() + ".\nKostet: " + this.getCosts());
+	}
 }

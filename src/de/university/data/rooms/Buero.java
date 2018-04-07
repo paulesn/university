@@ -2,7 +2,7 @@ package de.university.data.rooms;
 
 import de.university.data.RoomSize;
 
-public abstract class Buero extends Room{
+public class Buero extends Room{
     //----constructor----
 	
 	public Buero(){
@@ -14,6 +14,6 @@ public abstract class Buero extends Room{
 		this.setStudentCapacity(0);
 		this.setProfCapacity(1);
 		this.setBenefits("");
-		this.setInfo("Dient einem Professor als Arbeitsraum. Dadurch hat die Universitaet die Moeglichkeit, einen neuen Professor einzustellen. \nKostet: " + this.getCosts())
-
+		this.setInfo("Dient einem Professor als Arbeitsraum. Dadurch hat die Universitaet die Moeglichkeit, einen neuen Professor einzustellen. \nKostet: " + this.getCosts());
+	}
 }

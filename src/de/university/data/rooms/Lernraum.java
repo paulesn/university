@@ -2,7 +2,7 @@ package de.university.data.rooms;
 
 import de.university.data.RoomSize;
 
-public abstract class Lernraum extends Room{
+public class Lernraum extends Room{
     //----constructor----
 	
 	public Lernraum(){
@@ -14,6 +14,6 @@ public abstract class Lernraum extends Room{
 		this.setStudentCapacity(0);
 		this.setProfCapacity(0);
 		this.setBenefits("");
-		this.setInfo("Dient dem Studenten zum Lernen. Erhoeht die Wissenspunkte um " + this.getKnowledgeBonus() + " und die Wohlfühlpunkte um " + this.getWellbeingBonus()  + ".\nKostet: " + this.getCosts())
-
+		this.setInfo("Dient dem Studenten zum Lernen. Erhoeht die Wissenspunkte um " + this.getKnowledgeBonus() + " und die Wohlfühlpunkte um " + this.getWellbeingBonus()  + ".\nKostet: " + this.getCosts());
+	}
 }

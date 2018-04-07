@@ -2,7 +2,7 @@ package de.university.data.rooms;
 
 import de.university.data.RoomSize;
 
-public abstract class Parkplatz extends Room{
+public class Parkplatz extends Room{
     //----constructor----
 	
 	public Parkplatz(){
@@ -14,6 +14,6 @@ public abstract class Parkplatz extends Room{
 		this.setStudentCapacity(0);
 		this.setProfCapacity(0);
 		this.setBenefits("");
-		this.setInfo("Dient den Studenten zum Parken. Erhoeht die Wohlfuehlpunkte um " + this.getWellbeingBonus()  + ".\nKostet: " + this.getCosts())
-
+		this.setInfo("Dient den Studenten zum Parken. Erhoeht die Wohlfuehlpunkte um " + this.getWellbeingBonus()  + ".\nKostet: " + this.getCosts());
+	}
 }

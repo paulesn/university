@@ -2,7 +2,7 @@ package de.university.data.rooms;
 
 import de.university.data.RoomSize;
 
-public abstract class Computerpool extends Room{
+public class Computerpool extends Room{
     //----constructor----
 	
 	public Computerpool(){
@@ -14,6 +14,6 @@ public abstract class Computerpool extends Room{
 		this.setStudentCapacity(0);
 		this.setProfCapacity(0);
 		this.setBenefits("");
-		this.setInfo("Dient den Studenten zum Lernen mit Hilfe von Computern. Erhoet die Wissenspunkte um " + this.getKonwledgeBonus() +" und die Wohlfühlpunkte um " + this.getWellbeingBonus()  + ".\nKostet: " + this.getCosts())
-
+		this.setInfo("Dient den Studenten zum Lernen mit Hilfe von Computern. Erhoet die Wissenspunkte um " + this.getKonwledgeBonus() +" und die Wohlfühlpunkte um " + this.getWellbeingBonus()  + ".\nKostet: " + this.getCosts());
+	}
 }

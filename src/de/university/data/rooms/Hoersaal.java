@@ -2,7 +2,7 @@ package de.university.data.rooms;
 
 import de.university.data.RoomSize;
 
-public abstract class Hoersaal extends Room{
+public class Hoersaal extends Room{
     //----constructor----
 	
 	public Hoersaal(){
@@ -14,6 +14,6 @@ public abstract class Hoersaal extends Room{
 		this.setStudentCapacity(500);
 		this.setProfCapacity(0);
 		this.setBenefits("");
-		this.setInfo("Dient dem Studenten zum Lernen. Erhoet die Wissenspunkte um " + this.getKnowledgeBonus() + ", die Wohlfühlpunkte um " + this.getWellbeingBonus()+ " und die Kapazitaet der Studenten der Universitaet um " + this.getStudentCapacity() + ".\nKostet: " + this.getCosts())
-
+		this.setInfo("Dient dem Studenten zum Lernen. Erhoet die Wissenspunkte um " + this.getKnowledgeBonus() + ", die Wohlfühlpunkte um " + this.getWellbeingBonus()+ " und die Kapazitaet der Studenten der Universitaet um " + this.getStudentCapacity() + ".\nKostet: " + this.getCosts());
+	}
 }

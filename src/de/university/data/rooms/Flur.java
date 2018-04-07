@@ -2,7 +2,7 @@ package de.university.data.rooms;
 
 import de.university.data.RoomSize;
 
-public abstract class Flur extends Room{
+public class Flur extends Room{
     //----constructor----
 	
 	public Flur(){
@@ -14,6 +14,6 @@ public abstract class Flur extends Room{
 		this.setStudentCapacity(0);
 		this.setProfCapacity(0);
 		this.setBenefits("");
-		this.setInfo("Dient zum verbinden der verschiedenen Raeumen.\nKostet: \" + this.getCosts())
-
+		this.setInfo("Dient zum verbinden der verschiedenen Raeumen.\nKostet: " + this.getCosts());
+	}
 }

@@ -2,7 +2,7 @@ package de.university.data.rooms;
 
 import de.university.data.RoomSize;
 
-public abstract class Cafeteria extends Room{
+public class Cafeteria extends Room{
     //----constructor----
 	
 	public Cafeteria(){
@@ -14,6 +14,6 @@ public abstract class Cafeteria extends Room{
 		this.setStudentCapacity(0);
 		this.setProfCapacity(0);
 		this.setBenefits("");
-		this.setInfo("Dient den Studenten zum Essen. Erhoet die Wohlfühlpunkte um " + this.getWellbeingBonus() + ".\nKostet: " + this.getCosts())
-
+		this.setInfo("Dient den Studenten zum Essen. Erhoet die Wohlfühlpunkte um " + this.getWellbeingBonus() + ".\nKostet: " + this.getCosts());
+	}
 }
