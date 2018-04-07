@@ -33,6 +33,8 @@ public class BuildDialog extends JDialog {
         };
         //TODO have fun Kevin
         JTable table = new JTable(data, columnNames);
+        table.setFont(new Font("Serif", Font.BOLD, 30));
+        table.setRowHeight(30);
         d.add(table);
         d.setSize(900,1000);
         d.setVisible(true);
