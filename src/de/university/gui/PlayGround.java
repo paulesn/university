@@ -47,6 +47,7 @@ public class PlayGround extends JPanel {
         for (int i = 0; i != x; ++i) {
             for (int o = 0; o != x; ++o) {
                 field[i][o] = new JButton();
+                field[i][o].setBackground(Color.lightGray);
                 field[i][o].setPreferredSize(new Dimension(20, 20));
                 field[i][o].setActionCommand("" + (x * i + o));
                     /*

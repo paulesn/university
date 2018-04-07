@@ -6,6 +6,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  * this shows the menu panel
@@ -71,11 +73,13 @@ public class MenuBar extends JPanel{
         //add the buttons
         for(int i = 0; i!= numberOfButtons; ++i){
             menuButtons[i] = new JButton();
+            menuButtons[i].setBackground(Color.gray);
+            menuButtons[i].setForeground(Color.white);
+            //menuButtons[i].setBorder(BorderFactory.createRaisedBevelBorder());
             menuButtons[i].setActionCommand(""+i);
             menuButtons[i].addActionListener(listener);
             menuButtons[i].setFont(font);
             menuButtons[i].setPreferredSize(new Dimension(150,50));
-
             menuPanel.add(menuButtons[i]);
         }
         menuButtons[0].setText("Statistics");
@@ -83,8 +87,6 @@ public class MenuBar extends JPanel{
         menuButtons[2].setText("Research");
         menuButtons[3].setText("Personal");
         menuButtons[4].setText("Menu");
-
-
 
         //resLabels
         resPanel = new JPanel(new FlowLayout());

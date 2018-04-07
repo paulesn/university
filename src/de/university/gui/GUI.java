@@ -30,6 +30,7 @@ public class GUI extends JFrame {
     public GUI(){
         super("University");
         setBounds(100,100,1000,1000);
+        this.setMinimumSize(new Dimension(1000, 1000));
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainPanel = new JPanel(new BorderLayout());
         this.add(mainPanel);
