@@ -17,9 +17,10 @@ public class BuildDialog extends JDialog {
      */
     private void init(){
         JFrame f= new JFrame();
-        d = new JDialog(f , "Dialog Example", true);
+        d = new JDialog(f , "Build", true);
         d.setLocationRelativeTo(gui);
-        d.setModal(true);
+        d.setLocation(150, 160);
+
         String[] columnNames = {"Picture",
                 "Name",
                 "Costs",
@@ -32,11 +33,7 @@ public class BuildDialog extends JDialog {
 
         };
         //TODO have fun Kevin
-        JTable table = new JTable(data, columnNames);
-        table.setFont(new Font("Serif", Font.BOLD, 30));
-        table.setRowHeight(30);
-        d.add(table);
-        d.setSize(900,1000);
+        d.setSize(900,940);
         d.setVisible(true);
 
     }
