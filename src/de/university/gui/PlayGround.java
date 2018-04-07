@@ -33,6 +33,7 @@ public class PlayGround extends JPanel {
 
             if (mode) {
                 clicked(coordX, coordY);//build
+                System.out.println("PlayGround[36]: "+"Test");
             } else {
                 info(coordX, coordY);//show the info of the clicked button
             }
@@ -78,7 +79,9 @@ public class PlayGround extends JPanel {
                 //check the money
                 if(data.getMoney() >= currentBuildRoom.getCosts()) {
                     //build the room
+                    data.setMoney(data.getMoney()-currentBuildRoom.getCosts());
                     data.build(currentBuildRoom, coordX, coordY);
+                    System.out.println("PlayGround[83]: "+data.getMoney());
                 }else{
                     //not enough money
                     //TODO Message

@@ -70,6 +70,7 @@ public class GUI extends JFrame {
 
         this.builder = new Builder(this);
         this.data = data;
+        this.data.addGUI(this);
 
         //menuBar
         menuBar = new MenuBar(this);

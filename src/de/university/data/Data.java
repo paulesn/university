@@ -2,15 +2,22 @@ package de.university.data;
 
 import de.university.data.rooms.Room;
 import de.university.data.professors.Prof;
+import de.university.gui.GUI;
+
 import java.util.ArrayList;
 
 public class Data {
     //----variables----
+    private GUI gui;
     private Room[][] map;
     private ArrayList<Prof> profs = new ArrayList<Prof>();
     private ArrayList<Room> buildings = new ArrayList<Room>();
-    private int money;
+    private int money = 10000000;
     //----methods----
+
+    public void addGUI(GUI gui){
+        this.gui = gui;
+    }
 
     /**
      * returns the building on the specific coordinates x and y
@@ -35,7 +42,7 @@ public class Data {
     public void build(Room room, int x, int y) {
         Room clone = new Room(room);
         buildings.add(clone);
-
+        System.out.println("DATA[37]: "+buildings.toString());
         switch (room.getSize()) {
             //there are no breaks because the bigger ones use the smaller ones
             case GIGANTIC:
@@ -76,7 +83,7 @@ public class Data {
                 //the one you clicked at
                 map[x][y] = clone;
         }
-
+       gui.setButtonMode(false,null);
     }
 
     //----constructors----
