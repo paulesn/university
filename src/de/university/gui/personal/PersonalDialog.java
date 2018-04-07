@@ -10,9 +10,11 @@ import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class PersonalDialog extends JDialog {
     //----variables----
+    private PersonalDialog me;
     private GUI gui;
     private JPanel colums;
     private JLabel[] titles = new JLabel[6];
@@ -22,21 +24,26 @@ public class PersonalDialog extends JDialog {
     private JScrollPane sPane;
     private Font font = new Font("Monospace", Font.BOLD, 25);
     private Data data;
+    private ArrayList<Prof> profs;
 
     private ActionListener listener = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            new HireDialog(gui);
+            new HireDialog(gui,me);
         }
     };
     //----methods----
     public void profDisplay(){
         //TODO get profs out of data
-        //Prof[] profs = this.data.getProfs();
+        if(!this.data.getProfs().isEmpty()){
+            profs = this.data.getProfs();
 
-       // for(profs as prof){
-       //     pane2.add(new PersonalTableRow(prof, gui));
-       // }
+            for(Prof prof: profs){
+                pane2.add(new PersonalTableRow(prof, gui));
+            }
+        }
+        this.repaint();
+
     }
 
     /**
@@ -108,13 +115,15 @@ public class PersonalDialog extends JDialog {
     public PersonalDialog(GUI gui){
         super();
         this.gui = gui;
+        this.data = this.gui.getData();
         this.setMinimumSize(new Dimension(700,800));
         this.setPreferredSize(new Dimension(700,800));
         this.setLocationRelativeTo(this.gui);
         //this.setLayout(new GridLayout(0,1));
         init();
+        me = this;
         this.setVisible(true);
-        this.data = this.gui.getData();
+
         /*
         in the build mode the build dialog will be closed and the buttens will be colored:
         red cant click here
