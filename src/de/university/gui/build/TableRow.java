@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 
 public class TableRow extends JPanel{
     //----variables----
+    private BuildDialog owner;
     private GUI gui;
     private ImageIcon icon;
     private JLabel name;
@@ -42,6 +43,8 @@ public class TableRow extends JPanel{
 
                 //set Playground to build mode
                 gui.setButtonMode(true,room);
+                //close owner
+                owner.dispose();
             }
         });
         this.add(build);
@@ -50,8 +53,9 @@ public class TableRow extends JPanel{
     }
     //----constructor----
 
-    public TableRow(Room room, GUI gui) {
+    public TableRow(Room room, GUI gui, BuildDialog owner) {
         super();
+        this.owner = owner;
         this.gui = gui;
         this.room = room;
         this.setLayout(new FlowLayout());

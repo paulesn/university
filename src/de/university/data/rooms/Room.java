@@ -2,7 +2,7 @@ package de.university.data.rooms;
 
 import de.university.data.RoomSize;
 
-public abstract class Room {
+public class Room {
     //----variables----
     private String name;
     private int costs;
@@ -90,4 +90,23 @@ public abstract class Room {
 
     //----methods----
 
+    /**
+     * clone constructor
+     * @param room
+     */
+    public Room(Room room){
+        this.setName(room.getName());
+        this.setCosts(room.getCosts());
+        this.setSize(room.getSize());
+        this.setKnowledgeBonus(room.getKnowledgeBonus());
+        this.setWellbeingBonus(room.getWellbeingBonus());
+        this.setStudentCapacity(room.getStudentCapacity());
+        this.setProfCapacity(room.getProfCapacity());
+        this.setBenefits(room.getBenefits());
+        this.setInfo(room.getInfo());
+    }
+
+    public Room(){
+
+    }
 }

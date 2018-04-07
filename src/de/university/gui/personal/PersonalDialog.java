@@ -3,6 +3,7 @@ package de.university.gui.personal;
 import com.sun.xml.internal.ws.wsdl.writer.document.soap.Body;
 import de.university.data.professors.Prof;
 import de.university.gui.GUI;
+import de.university.data.Data;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -20,6 +21,7 @@ public class PersonalDialog extends JDialog {
     private JPanel pane2;
     private JScrollPane sPane;
     private Font font = new Font("Monospace", Font.BOLD, 25);
+    private Data data;
 
     private ActionListener listener = new ActionListener() {
         @Override
@@ -30,8 +32,9 @@ public class PersonalDialog extends JDialog {
     //----methods----
     public void profDisplay(){
         //TODO get profs out of data
+        //Prof[] profs = this.data.getProfs();
 
-       // for(Prof as prof){
+       // for(profs as prof){
        //     pane2.add(new PersonalTableRow(prof, gui));
        // }
     }
@@ -111,6 +114,7 @@ public class PersonalDialog extends JDialog {
         //this.setLayout(new GridLayout(0,1));
         init();
         this.setVisible(true);
+        this.data = this.gui.getData();
         /*
         in the build mode the build dialog will be closed and the buttens will be colored:
         red cant click here

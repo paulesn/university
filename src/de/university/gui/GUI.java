@@ -3,6 +3,7 @@ package de.university.gui;
 import de.university.control.Control;
 import de.university.data.Data;
 import de.university.data.rooms.Room;
+import de.university.gui.build.Builder;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,6 +17,7 @@ public class GUI extends JFrame {
     private MenuBar menuBar;
     private PlayGround playGround;
     private Data data;
+    private Builder builder;
 
     //----methodes----
 
@@ -35,6 +37,29 @@ public class GUI extends JFrame {
         return data;
     }
 
+    public Builder getBuilder(){
+        return builder;
+    }
+
+    /**
+     * marks a specific button with a give color c
+     * @param x
+     * @param y
+     * @param c
+     */
+    public void mark(int x, int y, Color c){
+        //TODO change to icons
+        //make icon invisible or use a dyed one
+        playGround.dyeButton(x,y,c);
+    }
+
+    /**
+     * changes all markings back to grey and resets the icons
+     */
+    public void clearMarking(){
+        playGround.dyeBack();
+    }
+
     //----constructor----
     public GUI(Data data){
         super("University");
@@ -43,6 +68,12 @@ public class GUI extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainPanel = new JPanel(new BorderLayout());
         this.add(mainPanel);
+
+        this.data = data;
+        this.builder = new Builder(this);
+
+        this.data.addGUI(this);
+
         //menuBar
         menuBar = new MenuBar(this);
         mainPanel.add(menuBar,BorderLayout.NORTH);
@@ -52,7 +83,6 @@ public class GUI extends JFrame {
         mainPanel.add(playGround,BorderLayout.CENTER);
 
         //----finalize----
-
         setVisible(true);
     }
 
