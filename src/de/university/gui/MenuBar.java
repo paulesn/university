@@ -6,8 +6,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
 
 /**
  * this shows the menu panel
@@ -87,6 +87,8 @@ public class MenuBar extends JPanel{
         menuButtons[2].setText("Research");
         menuButtons[3].setText("Personal");
         menuButtons[4].setText("Menu");
+
+
 
         //resLabels
         resPanel = new JPanel(new FlowLayout());
