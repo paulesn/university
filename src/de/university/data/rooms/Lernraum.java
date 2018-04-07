@@ -2,10 +2,10 @@ package de.university.data.rooms;
 
 import de.university.data.RoomSize;
 
-public class LerningSpace extends Room{
+public class Lernraum extends Room{
     //----constructor----
 	
-	public LerningSpace(){
+	public Lernraum(){
 		this.setName("Lerning space);
 		this.setCosts(1000);
 		this.setSize(RoomSize.SMALL);

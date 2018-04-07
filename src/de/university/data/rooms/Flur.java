@@ -2,11 +2,11 @@ package de.university.data.rooms;
 
 import de.university.data.RoomSize;
 
-public class Hallway extends Room{
+public class Flur extends Room{
     //----constructor----
 
-	public Hallway(){
-		this.setName("Hallway");
+	public Flur(){
+		this.setName("Flur");
 		this.setCosts(100);
 		this.setSize(RoomSize.MICRO);
 		this.setKnowledgeBonus(0);

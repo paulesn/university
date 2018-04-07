@@ -2,11 +2,11 @@ package de.university.data.rooms;
 
 import de.university.data.RoomSize;
 
-public class Grass extends Room{
+public class Gras extends Room{
     //----constructor----
 	
-	public Grass(){
-		this.setName("Grass area");
+	public Gras(){
+		this.setName("Gras area");
 		this.setCosts(500);
 		this.setSize(RoomSize.MICRO);
 		this.setKnowledgeBonus(0);

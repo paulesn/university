@@ -2,11 +2,11 @@ package de.university.data.rooms;
 
 import de.university.data.RoomSize;
 
-public class Office extends Room{
+public class Buero extends Room{
     //----constructor----
 	
-	public Office(){
-		this.setName("Office");
+	public Buero(){
+		this.setName("Buero");
 		this.setCosts(1500);
 		this.setSize(RoomSize.MICRO);
 		this.setKnowledgeBonus(0);

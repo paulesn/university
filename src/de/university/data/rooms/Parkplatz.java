@@ -2,10 +2,10 @@ package de.university.data.rooms;
 
 import de.university.data.RoomSize;
 
-public class ParkingSpot extends Room{
+public class Parkplatz extends Room{
     //----constructor----
 	
-	public ParkingSpot(){
+	public Parkplatz(){
 		this.setName("Parking spot);
 		this.setCosts(8000);
 		this.setSize(RoomSize.GIGANTIC);

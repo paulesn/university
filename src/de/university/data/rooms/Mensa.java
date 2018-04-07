@@ -2,11 +2,11 @@ package de.university.data.rooms;
 
 import de.university.data.RoomSize;
 
-public class Canteen extends Room{
+public class Mensa extends Room{
     //----constructor----
 	
-	public Canteen(){
-		this.setName("Canteen");
+	public Mensa(){
+		this.setName("Mensa");
 		this.setCosts(7000);
 		this.setSize(RoomSize.GIGANTIC);
 		this.setKnowledgeBonus(0);

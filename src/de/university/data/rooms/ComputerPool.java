@@ -2,10 +2,10 @@ package de.university.data.rooms;
 
 import de.university.data.RoomSize;
 
-public class ComputerRoom extends Room{
+public class ComputerPool extends Room{
     //----constructor----
 	
-	public ComputerRoom(){
+	public ComputerPool(){
 		this.setName("Computer room");
 		this.setCosts(6000);
 		this.setSize(RoomSize.BIG);

@@ -2,11 +2,11 @@ package de.university.data.rooms;
 
 import de.university.data.RoomSize;
 
-public class Library extends Room{
+public class Buecherei extends Room{
     //----constructor----
 	
-	public Library(){
-		this.setName("Library");
+	public Buecherei(){
+		this.setName("Buecherei");
 		this.setCosts(8000);
 		this.setSize(RoomSize.BIGGER);
 		this.setKnowledgeBonus(20);

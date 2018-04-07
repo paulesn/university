@@ -2,10 +2,10 @@ package de.university.data.rooms;
 
 import de.university.data.RoomSize;
 
-public class SeminarRoom extends Room{
+public class Seminarraum extends Room{
     //----constructor----
 	
-	public SeminarRoom(){
+	public Seminarraum(){
 		this.setName("Seminar room");
 		this.setCosts(1500);
 		this.setSize(RoomSize.NORMAL);

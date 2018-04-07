@@ -2,10 +2,10 @@ package de.university.data.rooms;
 
 import de.university.data.RoomSize;
 
-public class StudentCouncil extends Room{
+public class Fachschaft extends Room{
     //----constructor----
 	
-	public StudentCouncil(){
+	public Fachschaft(){
 		this.setName("Student Council");
 		this.setCosts(2500);
 		this.setSize(RoomSize.NORMAL);
