@@ -12,7 +12,7 @@ public abstract class Room {
     private int studentCapacity;
     private int profCapacity;
     private String benefits;
-    private int info;
+    private String info;
 
     //----getter-setter----
 
