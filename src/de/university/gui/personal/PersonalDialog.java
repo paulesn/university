@@ -1,6 +1,7 @@
 package de.university.gui.personal;
 
 import com.sun.xml.internal.ws.wsdl.writer.document.soap.Body;
+import de.university.data.professors.Prof;
 import de.university.gui.GUI;
 
 import javax.swing.*;
@@ -27,9 +28,16 @@ public class PersonalDialog extends JDialog {
         }
     };
     //----methods----
+    public void profDisplay(){
+        //TODO get profs out of data
+
+       // for(Prof as prof){
+       //     pane2.add(new PersonalTableRow(prof, gui));
+       // }
+    }
 
     /**
-     * inits the dialog
+     * inits the personal dialog
      */
     private void init(){
         //main pane
@@ -52,7 +60,6 @@ public class PersonalDialog extends JDialog {
         JButton hireProf = new JButton("New Prof");
         hireProf.setBackground(Color.gray);
         hireProf.setForeground(Color.white);
-        //menuButtons[i].setBorder(BorderFactory.createRaisedBevelBorder());
         hireProf.setActionCommand("hireProf");
         hireProf.addActionListener(listener);
         hireProf.setFont(font);
@@ -60,13 +67,38 @@ public class PersonalDialog extends JDialog {
         pane1.add(hireProf);
         pane.add(pane1,BorderLayout.NORTH);
 
+
+
         pane2 = new JPanel(new GridLayout(0,1));
+        colums = new JPanel();
+        pane2.add(colums);
+        colums.setLayout(new FlowLayout());
+        //the datas
+        titles[0] = new JLabel("Name");
+        titles[0].setFont(font);
+        colums.add(titles[0]);
+        titles[1] = new JLabel("Costs");
+        titles[1].setFont(font);
+        colums.add(titles[1]);
+        titles[2] = new JLabel("WellBeing");
+        titles[2].setFont(font);
+        colums.add(titles[2]);
+        titles[3] = new JLabel("Knowledge");
+        titles[3].setFont(font);
+        colums.add(titles[3]);
+        titles[4] = new JLabel("Benefits");
+        titles[4].setFont(font);
+        colums.add(titles[4]);
+        titles[5] = new JLabel("Info");
+        titles[5].setFont(font);
+        colums.add(titles[5]);
+
         sPane = new JScrollPane(pane2);
         pane.add(sPane,BorderLayout.CENTER);
 
         this.add(pane);
 
-
+        profDisplay();
     }
 
     //----constructor----

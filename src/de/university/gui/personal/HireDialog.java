@@ -16,7 +16,7 @@ public class HireDialog extends JDialog {
     //----methods----
 
     /**
-     * inits the dialog
+     * inits the hire dialog
      */
     private void init(){
         //main pane
