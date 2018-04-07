@@ -39,7 +39,6 @@ public class PersonalTableRow extends JPanel{
         this.benefits = new JLabel();
         this.benefits.setFont(font);
         this.add(benefits);
-
         this.info = new JButton("Info");
         this.info.setBackground(Color.gray);
         this.info.setForeground(Color.white);
