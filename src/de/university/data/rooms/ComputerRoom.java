@@ -6,7 +6,7 @@ public class ComputerRoom extends Room{
     //----constructor----
 	
 	public ComputerRoom(){
-		this.setName("Computer roomzz");
+		this.setName("Computer room");
 		this.setCosts(6000);
 		this.setSize(RoomSize.BIG);
 		this.setKnowledgeBonus(15);
