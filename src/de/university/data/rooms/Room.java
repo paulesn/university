@@ -12,7 +12,7 @@ public abstract class Room {
     private int studentCapacity;
     private int profCapacity;
     private String benefits;
-    private int info;
+    private String info;
 
     //----getter-setter----
 
@@ -80,11 +80,11 @@ public abstract class Room {
         this.benefits = benefits;
     }
 
-    public int getInfo() {
+    public String getInfo() {
         return info;
     }
 
-    public void setInfo(int info) {
+    public void setInfo(String info) {
         this.info = info;
     }
 

@@ -1,5 +1,7 @@
 package de.university.gui;
 
+import de.university.control.Control;
+import de.university.data.Data;
 import de.university.data.rooms.Room;
 
 import javax.swing.*;
@@ -13,6 +15,7 @@ public class GUI extends JFrame {
     private JPanel mainPanel;
     private MenuBar menuBar;
     private PlayGround playGround;
+    private Data data;
 
     //----methodes----
 
@@ -28,8 +31,12 @@ public class GUI extends JFrame {
         playGround.setButtonMode(mode, room);
     }
 
+    public Data getData(){
+        return data;
+    }
+
     //----constructor----
-    public GUI(){
+    public GUI(Data data){
         super("University");
         setBounds(100,100,1000,1000);
         this.setMinimumSize(new Dimension(1000, 1000));
