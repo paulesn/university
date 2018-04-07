@@ -1,5 +1,7 @@
 package de.university.gui;
 
+import de.university.data.rooms.Room;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -20,10 +22,10 @@ public class GUI extends JFrame {
      * false = info mode
      * @param mode
      */
-    public void setButtonMode(Boolean mode){
+    public void setButtonMode(Boolean mode, Room room){
         //true = build mode
         //false = info mode
-        playGround.setButtonMode(mode);
+        playGround.setButtonMode(mode, room);
     }
 
     //----constructor----

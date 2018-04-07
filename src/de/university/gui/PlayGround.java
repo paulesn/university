@@ -1,5 +1,7 @@
 package de.university.gui;
 
+import de.university.data.rooms.Room;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -33,10 +35,13 @@ public class PlayGround extends JPanel {
      * changes the mode of the buttons
      * true = build mode
      * false = info mode
+     * and marks the building spots
      * @param mode
+     * @param room
      */
-    public void setButtonMode(Boolean mode) {
+    public void setButtonMode(Boolean mode, Room room) {
         this.mode = mode;
+        //TODO mark the building possibilitys
     }
 
     //----constructors----
