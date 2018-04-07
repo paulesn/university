@@ -4,6 +4,7 @@ import de.university.data.rooms.Dirt;
 import de.university.data.rooms.Room;
 import de.university.data.professors.Prof;
 import de.university.gui.GUI;
+import de.university.gui.Icons;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -52,6 +53,7 @@ public class Data {
             case GIGANTIC:
                 for (int i = 0; i != 5; ++i) {
                     map[x + 4][y + i] = clone;
+                    iconMap[x+4][y+i] = Icons.get(4,i,room);
                 }
                 for (int i = 0; i != 4; ++i) {
                     map[x + i][y + 4] = clone;

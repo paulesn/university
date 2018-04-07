@@ -15,5 +15,6 @@ public class Buecherei extends Room{
 		this.setProfCapacity(0);
 		this.setBenefits("");
 		this.setInfo("For students to learn. Increases the points for knowledge by " + this.getKnowledgeBonus() +" and the points for wellbeing by " + this.getWellbeingBonus() + ".\nCosts:: " + this.getCosts());
+		this.setPath("de/university/extern/Bibliothek");
 	}
 }
