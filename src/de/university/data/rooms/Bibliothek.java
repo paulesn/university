@@ -14,6 +14,6 @@ public class Bibliothek extends Room{
 		this.setStudentCapacity(0);
 		this.setProfCapacity(0);
 		this.setBenefits("");
-		this.setInfo("Dient dem Studenten zum Lernen. Erhoet die Wissenspunkte um " + this.getKnowledgeBonus() +" und die Wohlfühlpunkte um " + this.getWellbeingBonus() + ".\nKostet: " + this.getCosts());
+		this.setInfo("Dient dem Studenten zum Lernen. Erhoet die Wissenspunkte um " + this.getKnowledgeBonus() +" und die Wohlfï¿½hlpunkte um " + this.getWellbeingBonus() + ".\nKostet: " + this.getCosts());
 	}
 }

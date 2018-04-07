@@ -7,7 +7,7 @@ public class Flur extends Room{
 	
 	public Flur(){
 		this.setName("Flur");
-		this.setCosts(100));
+		this.setCosts(100);
 		this.setSize(RoomSize.MICRO);
 		this.setKnowledgeBonus(0);
 		this.setWellbeingBonus(0);
