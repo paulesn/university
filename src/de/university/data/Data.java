@@ -1,12 +1,13 @@
 package de.university.data;
 
 import de.university.data.rooms.Room;
-
+import de.university.data.professors.Prof;
 import java.util.ArrayList;
 
 public class Data {
     //----variables----
     private Room[][] map;
+    private ArrayList<Prof> profs = new ArrayList<Prof>();
     private ArrayList<Room> buildings = new ArrayList<Room>();
     private int money;
     //----methods----
@@ -90,5 +91,21 @@ public class Data {
 
     public void setMoney(int money) {
         this.money = money;
+    }
+
+    /**
+     * return arraylist of professors
+     * @return
+     */
+    public ArrayList<Prof> getProfs(){
+        return profs;
+    }
+
+    /**
+     * add professor to arraylist
+     * @param prof
+     */
+    public void setProfs(Prof prof){
+        this.profs.add(prof);
     }
 }
