@@ -15,13 +15,12 @@ public class Builder {
     //----methods----
 
     public Boolean checkPossiblity(Room room, int x, int y, Color validColor) {
-        Boolean temp = false;
+        Boolean temp = true;
         switch (room.getSize()) {
             //there are no breaks because the bigger ones use the smaller ones
             case GIGANTIC:
                 for(int i = 0; i != 5;++i){
                     if (data.getBuilding(x+4, y+i).getClass() == new Dirt().getClass()) {
-                        temp = true;
                         gui.mark(x+4, y+i, validColor);
                     }else {
                         temp = false;
@@ -30,7 +29,6 @@ public class Builder {
                 }
                 for(int i = 0; i != 4;++i){
                     if (data.getBuilding(x+i, y+4).getClass() == new Dirt().getClass()) {
-                        temp = true;
                         gui.mark(x+i, y+4, validColor);
                     }else {
                         temp = false;
@@ -40,7 +38,6 @@ public class Builder {
             case BIGGER:
                 for(int i = 0; i != 4;++i){
                     if (data.getBuilding(x+3, y+i).getClass() == new Dirt().getClass()) {
-                        temp = true;
                         gui.mark(x+3, y+i, validColor);
                     }else {
                         temp = false;
@@ -49,7 +46,6 @@ public class Builder {
                 }
                 for(int i = 0; i != 3;++i){
                     if (data.getBuilding(x+i, y+3).getClass() == new Dirt().getClass()) {
-                        temp = true;
                         gui.mark(x+i, y+3, validColor);
                     }else {
                         temp = false;
@@ -59,7 +55,6 @@ public class Builder {
             case BIG:
                 //the last colum
                 if (data.getBuilding(x+2, y).getClass() == new Dirt().getClass()) {
-                    temp = true;
                     gui.mark(x+2, y, validColor);
                 }else {
                     temp = false;
@@ -67,7 +62,6 @@ public class Builder {
                 }
                 //--------------
                 if (data.getBuilding(x+2, y+1).getClass() == new Dirt().getClass()) {
-                    temp = true;
                     gui.mark(x+2, y+1, validColor);
                 }else {
                     temp = false;
@@ -75,7 +69,6 @@ public class Builder {
                 }
                 //-------------
                 if (data.getBuilding(x+2, y+2).getClass() == new Dirt().getClass()) {
-                    temp = true;
                     gui.mark(x+2, y+2, validColor);
                 }else {
                     temp = false;
@@ -83,7 +76,6 @@ public class Builder {
                 }
                 //the first two of the last row
                 if (data.getBuilding(x, y+2).getClass() == new Dirt().getClass()) {
-                    temp = true;
                     gui.mark(x, y+2, validColor);
                 }else {
                     temp = false;
@@ -91,7 +83,6 @@ public class Builder {
                 }
                 //----------
                 if (data.getBuilding(x+1, y+2).getClass() == new Dirt().getClass()) {
-                    temp = true;
                     gui.mark(x+1, y+2, validColor);
                 }else {
                     temp = false;
@@ -103,7 +94,6 @@ public class Builder {
             case NORMAL:
                 //the two below the following
                 if (data.getBuilding(x, y+1).getClass() == new Dirt().getClass()) {
-                    temp = true;
                     gui.mark(x, y+1, validColor);
                 }else {
                     temp = false;
@@ -111,7 +101,6 @@ public class Builder {
                 }
                 //---------------------
                 if (data.getBuilding(x+1, y+1).getClass() == new Dirt().getClass()) {
-                    temp = true;
                     gui.mark(x+1, y+1, validColor);
                 }else {
                     temp = false;
@@ -121,7 +110,6 @@ public class Builder {
             case SMALL:
                 //the one right next to the one you clicked at
                 if (data.getBuilding(x+1, y).getClass() == new Dirt().getClass()) {
-                    temp = true;
                     gui.mark(x+1, y, validColor);
                 }else {
                     temp = false;
@@ -131,7 +119,6 @@ public class Builder {
             case MICRO:
                 //the one you clicked at
                 if (data.getBuilding(x, y).getClass() == new Dirt().getClass()) {
-                    temp = true;
                     gui.mark(x, y, validColor);
                 }else {
                     temp = false;

@@ -5,18 +5,21 @@ import de.university.data.rooms.Room;
 import de.university.data.professors.Prof;
 import de.university.gui.GUI;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 public class Data {
     //----variables----
     private GUI gui;
     private Room[][] map;
+    private ImageIcon[][] iconMap;
     private ArrayList<Prof> profs = new ArrayList<Prof>();
     private ArrayList<Room> buildings = new ArrayList<Room>();
     private int money = 10000000;
+    private final int size;
     //----methods----
 
-    public void addGUI(GUI gui){
+    public void addGUI(GUI gui) {
         this.gui = gui;
     }
 
@@ -43,39 +46,39 @@ public class Data {
     public void build(Room room, int x, int y) {
         Room clone = new Room(room);
         buildings.add(clone);
-        System.out.println("DATA[37]: "+buildings.toString());
+        System.out.println("DATA[37]: " + buildings.toString());
         switch (room.getSize()) {
             //there are no breaks because the bigger ones use the smaller ones
             case GIGANTIC:
                 for (int i = 0; i != 5; ++i) {
-                    map[x+4][y+i] = clone;
+                    map[x + 4][y + i] = clone;
                 }
                 for (int i = 0; i != 4; ++i) {
-                    map[x+i][y+4] = clone;
+                    map[x + i][y + 4] = clone;
                 }
             case BIGGER:
                 for (int i = 0; i != 4; ++i) {
-                    map[x+3][y+i] = clone;
+                    map[x + 3][y + i] = clone;
                 }
                 for (int i = 0; i != 3; ++i) {
-                    map[x+i][y+3] = clone;
+                    map[x + i][y + 3] = clone;
                 }
             case BIG:
                 //the last colum
-                map[x+2][y] = clone;
+                map[x + 2][y] = clone;
                 //--------------
-                map[x+2][y+1] = clone;
+                map[x + 2][y + 1] = clone;
                 //-------------
-                map[x+2][y+2] = clone;
+                map[x + 2][y + 2] = clone;
                 //the first two of the last row
-                map[x][y+2] = clone;
+                map[x][y + 2] = clone;
                 //----------
-                map[x+1][y+2] = clone;
+                map[x + 1][y + 2] = clone;
             case NORMAL:
                 //the two below the following
-                map[x][y+1] = clone;
+                map[x][y + 1] = clone;
                 //---------------------
-                map[x+1][y+1] = clone;
+                map[x + 1][y + 1] = clone;
 
             case SMALL:
                 //the one right next to the one you clicked at
@@ -84,20 +87,64 @@ public class Data {
                 //the one you clicked at
                 map[x][y] = clone;
         }
-       gui.setButtonMode(false,null);
+        gui.setButtonMode(false, null);
+    }
+
+    public GUI getGui() {
+        return gui;
+    }
+
+    public void setGui(GUI gui) {
+        this.gui = gui;
+    }
+
+    public Room[][] getMap() {
+        return map;
+    }
+
+    public void setMap(Room[][] map) {
+        this.map = map;
+    }
+
+    public ImageIcon[][] getIconMap() {
+        return iconMap;
+    }
+
+    public void setIconMap(ImageIcon[][] iconMap) {
+        this.iconMap = iconMap;
+    }
+
+    public void setProfs(ArrayList<Prof> profs) {
+        this.profs = profs;
+    }
+
+    public ArrayList<Room> getBuildings() {
+        return buildings;
+    }
+
+    public void setBuildings(ArrayList<Room> buildings) {
+        this.buildings = buildings;
     }
 
     //----constructors----
     public Data(int size) {
+        this.size = size;
         map = new Room[size][size];
-        for(int i = 0; i != size; ++i){
-            for(int o = 0; o != size; ++o){
+        iconMap = new ImageIcon[size][size];
+        for (int i = 0; i != size; ++i) {
+            for (int o = 0; o != size; ++o) {
                 map[i][o] = new Dirt();
             }
         }
     }
 
     //----getter-setter----
+
+
+    public int getSize() {
+        return size;
+    }
+
     public int getMoney() {
         return money;
     }
@@ -108,17 +155,19 @@ public class Data {
 
     /**
      * return arraylist of professors
+     *
      * @return
      */
-    public ArrayList<Prof> getProfs(){
+    public ArrayList<Prof> getProfs() {
         return profs;
     }
 
     /**
      * add professor to arraylist
+     *
      * @param prof
      */
-    public void setProfs(Prof prof){
+    public void setProfs(Prof prof) {
         this.profs.add(prof);
     }
 }

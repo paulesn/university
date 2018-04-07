@@ -80,7 +80,6 @@ public class PlayGround extends JPanel {
                     //build the room
                     data.setMoney(data.getMoney()-currentBuildRoom.getCosts());
                     data.build(currentBuildRoom, coordX, coordY);
-                    System.out.println("PlayGround[83]: "+data.getMoney());
                 }else{
                     //not enough money
                     //TODO Message
@@ -89,7 +88,6 @@ public class PlayGround extends JPanel {
             }
         }
         //first click
-        System.out.println("PlayGround[92]: "+"test clicked");
         if (builder.checkPossiblity(currentBuildRoom, coordX, coordY, Color.BLUE)) {
             currentX = coordX;
             currentY = coordY;
