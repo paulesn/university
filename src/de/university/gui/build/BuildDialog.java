@@ -1,5 +1,6 @@
 package de.university.gui.build;
 
+import de.university.data.rooms.*;
 import de.university.gui.GUI;
 
 import javax.swing.*;
@@ -49,7 +50,21 @@ public class BuildDialog extends JDialog {
         titles[5].setFont(font);
         colums.add(titles[5]);
         //
-        //TODO get all rooms from Data
+        //get all rooms from Data
+        pane.add(new TableRow(new Bibliothek(),gui));
+        pane.add(new TableRow(new Buero(),gui));
+        pane.add(new TableRow(new Cafeteria(),gui));
+        pane.add(new TableRow(new Fachschaft(),gui));
+        pane.add(new TableRow(new Flur(),gui));
+        pane.add(new TableRow(new Gras(),gui));
+        pane.add(new TableRow(new Hoersaal(),gui));
+        pane.add(new TableRow(new Lernraum(),gui));
+        pane.add(new TableRow(new Mensa(),gui));
+        pane.add(new TableRow(new Parkplatz(),gui));
+        pane.add(new TableRow(new Seminarraum(),gui));
+        pane.add(new TableRow(new Wohnheim(),gui));
+
+
     }
 
     //----constructor----

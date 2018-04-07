@@ -1,6 +1,8 @@
 package de.university.gui;
 
+import de.university.data.Data;
 import de.university.data.rooms.Room;
+import de.university.gui.build.Builder;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,6 +14,9 @@ import java.awt.event.ActionListener;
  */
 public class PlayGround extends JPanel {
     //----variables---
+    private Data data;
+    private int startX;
+    private int startY;
     private GUI gui;
     private int x = 15;
     private JButton[][] field = new JButton[x][x];
@@ -22,9 +27,13 @@ public class PlayGround extends JPanel {
             int temp = Integer.parseInt(e.getActionCommand());
             int coordX = temp % x;
             int coordY = temp / x;
-            if(mode) {
+
+            coordX += startX;
+            coordY += startY;
+
+            if (mode) {
                 clicked(coordX, coordY);//build
-            }else{
+            } else {
                 info(coordX, coordY);//show the info of the clicked button
             }
         }
@@ -34,6 +43,7 @@ public class PlayGround extends JPanel {
     private Room currentBuildRoom;
     private int currentX;
     private int currentY;
+    private Builder builder;
 
     //----methods----
 
@@ -42,33 +52,42 @@ public class PlayGround extends JPanel {
      * true = build mode
      * false = info mode
      * and marks the building spots
+     *
      * @param mode
      * @param room
      */
     public void setButtonMode(Boolean mode, Room room) {
         this.mode = mode;
+        this.currentBuildRoom = room;
         //TODO mark the building possibilitys
+        //run through every coord with the checkposibility from Builder and the color GREEN
     }
 
     /**
      * first click: show the possibilitys
      * second click: build here
+     *
      * @param coordX
      * @param coordY
      */
     private void clicked(int coordX, int coordY) {
-        if(currentX == coordX){
-            if(currentY == coordY){
+        gui.clearMarking();
+        if (currentX == coordX) {
+            if (currentY == coordY) {
                 //second click
-
+                //check the money
+                if(data.getMoney() >= currentBuildRoom.getCosts()) {
+                    //build the room
+                    data.build(currentBuildRoom, coordX, coordY);
+                }else{
+                    //not enough money
+                    //TODO Message
+                }
                 return;
             }
         }
         //first click
-        //check possibility
-
-        //TODO show blue
-        if(true) {
+        if (builder.checkPossiblity(currentBuildRoom, coordX, coordY, Color.BLUE)) {
             currentX = coordX;
             currentY = coordY;
         }
@@ -76,10 +95,11 @@ public class PlayGround extends JPanel {
 
     /**
      * shows the info of the clicked room
+     *
      * @param x
      * @param y
      */
-    private void info(int x, int y){
+    private void info(int x, int y) {
         //TODO
     }
 
@@ -87,6 +107,8 @@ public class PlayGround extends JPanel {
     public PlayGround(GUI gui) {
         super();
         this.gui = gui;
+        this.data = gui.getData();
+        this.builder = gui.getBuilder();
         this.setLayout(new GridLayout(x, x));
         for (int i = 0; i != x; ++i) {
             for (int o = 0; o != x; ++o) {
