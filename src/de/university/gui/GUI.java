@@ -51,10 +51,14 @@ public class GUI extends JFrame {
      * @param y
      * @param c
      */
-    public void mark(int x, int y, Color c){
+    public void mark(int x, int y,Color c){
         //TODO change to icons
         //make icon invisible or use a dyed one
         playGround.dyeButton(x,y,c);
+    }
+
+    public void mark(int x, int y, Room r){
+
     }
 
     /**

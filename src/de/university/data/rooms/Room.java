@@ -13,8 +13,18 @@ public class Room {
     private int profCapacity;
     private String benefits;
     private String info;
+    private String path;
 
     //----getter-setter----
+
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
 
     public String getName() {
         return name;
@@ -104,6 +114,7 @@ public class Room {
         this.setProfCapacity(room.getProfCapacity());
         this.setBenefits(room.getBenefits());
         this.setInfo(room.getInfo());
+        this.setPath(room.getPath());
     }
 
     public Room(){
