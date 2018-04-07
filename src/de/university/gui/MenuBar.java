@@ -1,6 +1,7 @@
 package de.university.gui;
 
 import de.university.gui.build.BuildDialog;
+import de.university.gui.personal.PersonalDialog;
 
 import javax.swing.*;
 import java.awt.*;
@@ -47,7 +48,7 @@ public class MenuBar extends JPanel{
                 break;
             case 2: //TODO research
                 break;
-            case 3: //TODO Personal
+            case 3: new PersonalDialog(gui);
                 break;
             case 4: //TODO ESC
                 break;

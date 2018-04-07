@@ -22,12 +22,18 @@ public class PlayGround extends JPanel {
             int temp = Integer.parseInt(e.getActionCommand());
             int coordX = temp % x;
             int coordY = temp / x;
-
-            //buttonPressed(coordX,coordY);
+            if(mode) {
+                clicked(coordX, coordY);//build
+            }else{
+                info(coordX, coordY);//show the info of the clicked button
+            }
         }
     };
+    //for building only
     private Boolean mode = false;
-
+    private Room currentBuildRoom;
+    private int currentX;
+    private int currentY;
 
     //----methods----
 
@@ -42,6 +48,39 @@ public class PlayGround extends JPanel {
     public void setButtonMode(Boolean mode, Room room) {
         this.mode = mode;
         //TODO mark the building possibilitys
+    }
+
+    /**
+     * first click: show the possibilitys
+     * second click: build here
+     * @param coordX
+     * @param coordY
+     */
+    private void clicked(int coordX, int coordY) {
+        if(currentX == coordX){
+            if(currentY == coordY){
+                //second click
+
+                return;
+            }
+        }
+        //first click
+        //check possibility
+
+        //TODO show blue
+        if(true) {
+            currentX = coordX;
+            currentY = coordY;
+        }
+    }
+
+    /**
+     * shows the info of the clicked room
+     * @param x
+     * @param y
+     */
+    private void info(int x, int y){
+        //TODO
     }
 
     //----constructors----
