@@ -30,10 +30,9 @@ public class PlayGround extends JPanel {
 
             coordX += startX;
             coordY += startY;
-
+            System.out.println("PlayGround[33]: "+mode);
             if (mode) {
                 clicked(coordX, coordY);//build
-                System.out.println("PlayGround[36]: "+"Test");
             } else {
                 info(coordX, coordY);//show the info of the clicked button
             }
@@ -71,7 +70,7 @@ public class PlayGround extends JPanel {
      * @param coordX
      * @param coordY
      */
-    private void clicked(int coordX, int coordY) {
+    private void clicked(int coordY, int coordX) {
         gui.clearMarking();
         if (currentX == coordX) {
             if (currentY == coordY) {
@@ -90,6 +89,7 @@ public class PlayGround extends JPanel {
             }
         }
         //first click
+        System.out.println("PlayGround[92]: "+"test clicked");
         if (builder.checkPossiblity(currentBuildRoom, coordX, coordY, Color.BLUE)) {
             currentX = coordX;
             currentY = coordY;
@@ -124,6 +124,7 @@ public class PlayGround extends JPanel {
                     actioncommand % x = i
                     actioncommand / x = o
                      */
+                    field[i][o].addActionListener(listener);
                 this.add(field[i][o]);
             }
         }
@@ -131,5 +132,16 @@ public class PlayGround extends JPanel {
 
     }
 
-
+    //TODO maybe deleate
+    public void dyeButton(int x, int y, Color c) {
+        field[x][y].setBackground(c);
+    }
+    //TODO maybe deleate
+    public void dyeBack() {
+        for (int i = 0; i != x; ++i) {
+            for (int o = 0; o != x; ++o) {
+                field[i][o].setBackground(Color.GRAY);
+            }
+        }
+    }
 }

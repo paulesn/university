@@ -1,6 +1,7 @@
 package de.university.gui.build;
 
 import de.university.data.Data;
+import de.university.data.rooms.Dirt;
 import de.university.data.rooms.Room;
 import de.university.gui.GUI;
 
@@ -19,7 +20,7 @@ public class Builder {
             //there are no breaks because the bigger ones use the smaller ones
             case GIGANTIC:
                 for(int i = 0; i != 5;++i){
-                    if (data.getBuilding(x+4, y+i) == null) {
+                    if (data.getBuilding(x+4, y+i).getClass() == new Dirt().getClass()) {
                         temp = true;
                         gui.mark(x+4, y+i, validColor);
                     }else {
@@ -28,7 +29,7 @@ public class Builder {
                     }
                 }
                 for(int i = 0; i != 4;++i){
-                    if (data.getBuilding(x+i, y+4) == null) {
+                    if (data.getBuilding(x+i, y+4).getClass() == new Dirt().getClass()) {
                         temp = true;
                         gui.mark(x+i, y+4, validColor);
                     }else {
@@ -38,7 +39,7 @@ public class Builder {
                 }
             case BIGGER:
                 for(int i = 0; i != 4;++i){
-                    if (data.getBuilding(x+3, y+i) == null) {
+                    if (data.getBuilding(x+3, y+i).getClass() == new Dirt().getClass()) {
                         temp = true;
                         gui.mark(x+3, y+i, validColor);
                     }else {
@@ -47,7 +48,7 @@ public class Builder {
                     }
                 }
                 for(int i = 0; i != 3;++i){
-                    if (data.getBuilding(x+i, y+3) == null) {
+                    if (data.getBuilding(x+i, y+3).getClass() == new Dirt().getClass()) {
                         temp = true;
                         gui.mark(x+i, y+3, validColor);
                     }else {
@@ -57,7 +58,7 @@ public class Builder {
                 }
             case BIG:
                 //the last colum
-                if (data.getBuilding(x+2, y) == null) {
+                if (data.getBuilding(x+2, y).getClass() == new Dirt().getClass()) {
                     temp = true;
                     gui.mark(x+2, y, validColor);
                 }else {
@@ -65,7 +66,7 @@ public class Builder {
                     gui.mark(x+2, y, Color.RED);
                 }
                 //--------------
-                if (data.getBuilding(x+2, y+1) == null) {
+                if (data.getBuilding(x+2, y+1).getClass() == new Dirt().getClass()) {
                     temp = true;
                     gui.mark(x+2, y+1, validColor);
                 }else {
@@ -73,7 +74,7 @@ public class Builder {
                     gui.mark(x+2, y+1, Color.RED);
                 }
                 //-------------
-                if (data.getBuilding(x+2, y+2) == null) {
+                if (data.getBuilding(x+2, y+2).getClass() == new Dirt().getClass()) {
                     temp = true;
                     gui.mark(x+2, y+2, validColor);
                 }else {
@@ -81,7 +82,7 @@ public class Builder {
                     gui.mark(x+2, y+2, Color.RED);
                 }
                 //the first two of the last row
-                if (data.getBuilding(x, y+2) == null) {
+                if (data.getBuilding(x, y+2).getClass() == new Dirt().getClass()) {
                     temp = true;
                     gui.mark(x, y+2, validColor);
                 }else {
@@ -89,7 +90,7 @@ public class Builder {
                     gui.mark(x, y+2, Color.RED);
                 }
                 //----------
-                if (data.getBuilding(x+1, y+2) == null) {
+                if (data.getBuilding(x+1, y+2).getClass() == new Dirt().getClass()) {
                     temp = true;
                     gui.mark(x+1, y+2, validColor);
                 }else {
@@ -101,7 +102,7 @@ public class Builder {
 
             case NORMAL:
                 //the two below the following
-                if (data.getBuilding(x, y+1) == null) {
+                if (data.getBuilding(x, y+1).getClass() == new Dirt().getClass()) {
                     temp = true;
                     gui.mark(x, y+1, validColor);
                 }else {
@@ -109,7 +110,7 @@ public class Builder {
                     gui.mark(x, y+1, Color.RED);
                 }
                 //---------------------
-                if (data.getBuilding(x+1, y+1) == null) {
+                if (data.getBuilding(x+1, y+1).getClass() == new Dirt().getClass()) {
                     temp = true;
                     gui.mark(x+1, y+1, validColor);
                 }else {
@@ -119,7 +120,7 @@ public class Builder {
 
             case SMALL:
                 //the one right next to the one you clicked at
-                if (data.getBuilding(x+1, y) == null) {
+                if (data.getBuilding(x+1, y).getClass() == new Dirt().getClass()) {
                     temp = true;
                     gui.mark(x+1, y, validColor);
                 }else {
@@ -129,7 +130,7 @@ public class Builder {
 
             case MICRO:
                 //the one you clicked at
-                if (data.getBuilding(x, y) == null) {
+                if (data.getBuilding(x, y).getClass() == new Dirt().getClass()) {
                     temp = true;
                     gui.mark(x, y, validColor);
                 }else {

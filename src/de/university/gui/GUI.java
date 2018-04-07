@@ -48,15 +48,16 @@ public class GUI extends JFrame {
      * @param c
      */
     public void mark(int x, int y, Color c){
-        //TODO mark a button
+        //TODO change to icons
         //make icon invisible or use a dyed one
+        playGround.dyeButton(x,y,c);
     }
 
     /**
      * changes all markings back to grey and resets the icons
      */
     public void clearMarking(){
-        //TODO
+        playGround.dyeBack();
     }
 
     //----constructor----
@@ -68,8 +69,9 @@ public class GUI extends JFrame {
         mainPanel = new JPanel(new BorderLayout());
         this.add(mainPanel);
 
-        this.builder = new Builder(this);
         this.data = data;
+        this.builder = new Builder(this);
+
         this.data.addGUI(this);
 
         //menuBar
