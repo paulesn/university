@@ -6,7 +6,7 @@ public class Dirt extends Room{
     //----constructor----
 
     public Dirt(){
-        this.setName("Buero");
+        this.setName("Dirt");
         this.setCosts(0);
         this.setSize(RoomSize.MICRO);
         this.setKnowledgeBonus(0);
