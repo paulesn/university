@@ -6,7 +6,7 @@ public class Lernraum extends Room{
     //----constructor----
 	
 	public Lernraum(){
-		this.setName("Lerning space);
+		this.setName("Lerning space");
 		this.setCosts(1000);
 		this.setSize(RoomSize.SMALL);
 		this.setKnowledgeBonus(5);

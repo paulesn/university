@@ -51,7 +51,7 @@ public class BuildDialog extends JDialog {
         colums.add(titles[5]);
         //
         //get all rooms from Data
-        pane.add(new TableRow(new Bibliothek(),gui, this));
+        pane.add(new TableRow(new Buecherei(),gui, this));
         pane.add(new TableRow(new Buero(),gui, this));
         pane.add(new TableRow(new Cafeteria(),gui, this));
         pane.add(new TableRow(new Fachschaft(),gui, this));

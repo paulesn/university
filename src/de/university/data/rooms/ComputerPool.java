@@ -14,6 +14,6 @@ public class ComputerPool extends Room{
 		this.setStudentCapacity(0);
 		this.setProfCapacity(0);
 		this.setBenefits("");
-		this.setInfo("Gives the students the oportuinity to study with computers. Increases the points for knowledge by " + this.getKonwledgeBonus() +" and the points for wellbeing by " + this.getWellbeingBonus()  + ".\nCosts:: " + this.getCosts());
+		this.setInfo("Gives the students the oportuinity to study with computers. Increases the points for knowledge by " + this.getKnowledgeBonus() +" and the points for wellbeing by " + this.getWellbeingBonus()  + ".\nCosts:: " + this.getCosts());
 	}
 }

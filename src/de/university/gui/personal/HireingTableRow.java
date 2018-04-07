@@ -30,6 +30,7 @@ public class HireingTableRow extends JPanel{
             data.setProfs(prof);
             dialog.dispose();
             dialog1.profDisplay();
+            dialog1.repaint();
 
 
         }

@@ -6,7 +6,7 @@ public class Parkplatz extends Room{
     //----constructor----
 	
 	public Parkplatz(){
-		this.setName("Parking spot);
+		this.setName("Parking spot");
 		this.setCosts(8000);
 		this.setSize(RoomSize.GIGANTIC);
 		this.setKnowledgeBonus(0);
