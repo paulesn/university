@@ -1,5 +1,6 @@
 package de.university.data;
 
+import de.university.data.rooms.Dirt;
 import de.university.data.rooms.Room;
 import de.university.data.professors.Prof;
 import de.university.gui.GUI;
@@ -89,6 +90,11 @@ public class Data {
     //----constructors----
     public Data(int size) {
         map = new Room[size][size];
+        for(int i = 0; i != size; ++i){
+            for(int o = 0; o != size; ++o){
+                map[i][o] = new Dirt();
+            }
+        }
     }
 
     //----getter-setter----
