@@ -2,18 +2,18 @@ package de.university.data.rooms;
 
 import de.university.data.RoomSize;
 
-public abstract class Cafeteria extends Rooms{
+public abstract class Cafeteria extends Room{
     //----constructor----
 	
-	public Cafeteria{
+	public Cafeteria(){
 		this.setName("Cafeteria");
 		this.setCosts(4000);
-		this.setSize(BIG);
+		this.setSize(RoomSize.BIG);
 		this.setKnowledgeBonus(0);
 		this.setWellbeingBonus(20);
 		this.setStudentCapacity(0);
 		this.setProfCapacity(0);
-		this.setBenefits(0);
-		this.setInfo("Dient den Studenten zum Essen. Erhoet die Wohlfühlpunkte um 20.")
+		this.setBenefits("");
+		this.setInfo("Dient den Studenten zum Essen. Erhoet die Wohlfühlpunkte um " + this.getWellbeingBonus() + ".\nKostet: " + this.getCosts())
 
 }

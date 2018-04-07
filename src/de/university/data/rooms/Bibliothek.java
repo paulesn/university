@@ -2,18 +2,18 @@ package de.university.data.rooms;
 
 import de.university.data.RoomSize;
 
-public abstract class Bibliothek extends Rooms{
+public abstract class Bibliothek extends Room{
     //----constructor----
 	
-	public Bibliothek{
+	public Bibliothek(){
 		this.setName("Bibliothek");
 		this.setCosts(8000);
-		this.setSize(BIGGER);
+		this.setSize(RoomSize.BIGGER);
 		this.setKnowledgeBonus(20);
 		this.setWellbeingBonus(10);
 		this.setStudentCapacity(0);
 		this.setProfCapacity(0);
-		this.setBenefits(0);
-		this.setInfo("Dient dem Studenten zum Lernen. Erhoet die Wissenspunkte um 20 und die Wohlfühlpunkte um 10.")
+		this.setBenefits("");
+		this.setInfo("Dient dem Studenten zum Lernen. Erhoet die Wissenspunkte um " + this.getKnowledgeBonus() +" und die Wohlfühlpunkte um " + this.getWellbeingBonus() + ".\nKostet: " + this.getCosts())
 
 }

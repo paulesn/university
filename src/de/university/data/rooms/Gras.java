@@ -2,18 +2,18 @@ package de.university.data.rooms;
 
 import de.university.data.RoomSize;
 
-public abstract class Gras extends Rooms{
+public abstract class Gras extends Room{
     //----constructor----
 	
-	public Gras{
+	public Gras(){
 		this.setName("Gruenflaeche");
 		this.setCosts(500);
-		this.setSize(MICRO);
+		this.setSize(RoomSize.MICRO);
 		this.setKnowledgeBonus(0);
 		this.setWellbeingBonus(5);
 		this.setStudentCapacity(0);
 		this.setProfCapacity(0);
-		this.setBenefits(0);
-		this.setInfo("Dient zum erhoehen der Wohlfuelpunkte um 5.")
+		this.setBenefits("");
+		this.setInfo("Dient zum erhoehen der Wohlfuehlpunkte um " + this.getWellbeingBonus()  + ".\nKostet: " + this.getCosts())
 
 }
