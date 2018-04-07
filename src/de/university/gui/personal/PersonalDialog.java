@@ -25,6 +25,8 @@ public class PersonalDialog extends JDialog {
     private Font font = new Font("Monospace", Font.BOLD, 25);
     private Data data;
     private ArrayList<Prof> profs;
+    private String profcount;
+    private JLabel labelProfCount = new JLabel("", SwingConstants.CENTER);
 
     private ActionListener listener = new ActionListener() {
         @Override
@@ -32,53 +34,27 @@ public class PersonalDialog extends JDialog {
             new HireDialog(gui,me);
         }
     };
+
+    public void resetLabelText(){
+        this.labelProfCount.setText(this.profcount);
+        this.revalidate();
+        this.repaint();
+    }
+
     //----methods----
     public void profDisplay(){
         //TODO get profs out of data
         if(!this.data.getProfs().isEmpty()){
             profs = this.data.getProfs();
-
             for(Prof prof: profs){
-                pane2.add(new PersonalTableRow(prof, gui));
+                pane2.add(new PersonalTableRow(prof, gui, this.me));
             }
         }
         this.repaint();
 
     }
 
-    /**
-     * inits the personal dialog
-     */
-    private void init(){
-        //main pane
-        pane = new JPanel();
-        pane.setLayout(new BorderLayout());
-        pane1 = new JPanel();
-        pane1.setLayout(new GridLayout(3,3));
-        JLabel labelStud = new JLabel("Stud.:", SwingConstants.CENTER);
-        labelStud.setFont(font);
-        pane1.add(labelStud);
-        JLabel labelStudCount = new JLabel("4444", SwingConstants.CENTER);
-        labelStudCount.setFont(font);
-        pane1.add(labelStudCount);
-        JLabel labelProf = new JLabel("Prof.:", SwingConstants.CENTER);
-        labelProf.setFont(font);
-        pane1.add(labelProf);
-        JLabel labelProfCount = new JLabel("44444", SwingConstants.CENTER);
-        labelProfCount.setFont(font);
-        pane1.add(labelProfCount);
-        JButton hireProf = new JButton("New Prof");
-        hireProf.setBackground(Color.gray);
-        hireProf.setForeground(Color.white);
-        hireProf.setActionCommand("hireProf");
-        hireProf.addActionListener(listener);
-        hireProf.setFont(font);
-        hireProf.setPreferredSize(new Dimension(150,50));
-        pane1.add(hireProf);
-        pane.add(pane1,BorderLayout.NORTH);
-
-
-
+    private void setColums(){
         pane2 = new JPanel(new GridLayout(0,1));
         colums = new JPanel();
         pane2.add(colums);
@@ -102,6 +78,41 @@ public class PersonalDialog extends JDialog {
         titles[5] = new JLabel("Info");
         titles[5].setFont(font);
         colums.add(titles[5]);
+    }
+
+    /**
+     * inits the personal dialog
+     */
+    private void init(){
+
+        //main pane
+        pane = new JPanel();
+        pane.setLayout(new BorderLayout());
+        pane1 = new JPanel();
+        pane1.setLayout(new GridLayout(3,3));
+        JLabel labelStud = new JLabel("Stud.:", SwingConstants.CENTER);
+        labelStud.setFont(font);
+        pane1.add(labelStud);
+        JLabel labelStudCount = new JLabel("4444", SwingConstants.CENTER);
+        labelStudCount.setFont(font);
+        pane1.add(labelStudCount);
+        JLabel labelProf = new JLabel("Prof.:", SwingConstants.CENTER);
+        labelProf.setFont(font);
+        pane1.add(labelProf);
+        this.resetLabelText();
+        this.labelProfCount.setFont(font);
+        pane1.add(this.labelProfCount);
+        JButton hireProf = new JButton("New Prof");
+        hireProf.setBackground(Color.gray);
+        hireProf.setForeground(Color.white);
+        hireProf.setActionCommand("hireProf");
+        hireProf.addActionListener(listener);
+        hireProf.setFont(font);
+        hireProf.setPreferredSize(new Dimension(150,50));
+        pane1.add(hireProf);
+        pane.add(pane1,BorderLayout.NORTH);
+
+        setColums();
 
         sPane = new JScrollPane(pane2);
         pane.add(sPane,BorderLayout.CENTER);
@@ -114,14 +125,16 @@ public class PersonalDialog extends JDialog {
     //----constructor----
     public PersonalDialog(GUI gui){
         super();
+        me = this;
         this.gui = gui;
         this.data = this.gui.getData();
+        this.profcount = ""+this.data.getProfs().size();
         this.setMinimumSize(new Dimension(700,800));
         this.setPreferredSize(new Dimension(700,800));
         this.setLocationRelativeTo(this.gui);
         //this.setLayout(new GridLayout(0,1));
         init();
-        me = this;
+
         this.setVisible(true);
 
         /*

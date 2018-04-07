@@ -121,4 +121,52 @@ public class Data {
     public void setProfs(Prof prof){
         this.profs.add(prof);
     }
+
+    /**
+     * removes a professor from the arraylist
+     * @param prof
+     */
+    public void deleteProf(Prof prof) {
+        this.profs.remove(prof);
+    }
+
+    /**
+     * returns the current professor capacity
+     * @return Integer
+     */
+    public Integer currentProfCapacity(){
+        Integer currentProfCapacity = 0;
+        if(!buildings.isEmpty()){
+            for (Room room: buildings) {
+                currentProfCapacity += room.getProfCapacity();
+            }
+        }
+        return currentProfCapacity;
+    }
+
+    /**
+     * returns the current Student capacity
+     * @return Integer
+     */
+    public Integer currentStudentCapacity(){
+        Integer currentStudentCapacity = 0;
+        if(!buildings.isEmpty()){
+            for (Room room: buildings) {
+                currentStudentCapacity += room.getStudentCapacity();
+            }
+        }
+        return currentStudentCapacity;
+    }
+
+    public Integer currentWellbeingCapacity(){
+        Integer currentWellbeingCapacity = 0;
+        if(!buildings.isEmpty()){
+            for (Room room: buildings) {
+                currentWellbeingCapacity += room.getWellbeingBonus();
+            }
+        }
+        return currentWellbeingCapacity;
+    }
+
+
 }

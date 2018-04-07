@@ -1,5 +1,6 @@
 package de.university.gui.personal;
 
+import de.university.data.Data;
 import de.university.data.rooms.Room;
 import de.university.gui.GUI;
 import de.university.data.professors.Prof;
@@ -19,7 +20,20 @@ public class PersonalTableRow extends JPanel{
     private JLabel benefits;
     private JButton info;
     private JButton fire;
+    private Data data;
+    private PersonalDialog dialog;
     private Font font = new Font("Monospace", Font.BOLD, 25);
+    private ActionListener listener = new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            data.deleteProf(prof);
+            dialog.dispose();
+            new PersonalDialog(gui);
+
+
+        }
+    };
+
     //----methods----
 
     /**
@@ -49,18 +63,20 @@ public class PersonalTableRow extends JPanel{
         this.fire = new JButton("Fire");
         this.fire.setBackground(Color.gray);
         this.fire.setForeground(Color.white);
-        this.fire.setActionCommand("hire");
+        this.fire.addActionListener(listener);
+        this.fire.setActionCommand("fire");
         this.fire.setFont(font);
         this.fire.setPreferredSize(new Dimension(150,50));
         this.add(fire);
-
-
     }
     //----constructor----
 
-    public PersonalTableRow(Prof prof, GUI gui) {
+    public PersonalTableRow(Prof prof, GUI gui, PersonalDialog dialog) {
         super();
+        this.dialog = dialog;
         this.gui = gui;
+
+        this.data = this.gui.getData();
         this.prof = prof;
         this.setLayout(new FlowLayout());
         init();

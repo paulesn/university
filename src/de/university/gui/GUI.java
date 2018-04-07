@@ -33,6 +33,10 @@ public class GUI extends JFrame {
         playGround.setButtonMode(mode, room);
     }
 
+    public MenuBar getGuiMenuBar(){
+        return this.menuBar;
+    }
+
     public Data getData(){
         return data;
     }
@@ -75,8 +79,9 @@ public class GUI extends JFrame {
         this.data.addGUI(this);
 
         //menuBar
-        menuBar = new MenuBar(this);
+        menuBar = new MenuBar(this, this.data);
         mainPanel.add(menuBar,BorderLayout.NORTH);
+
 
         //playGround
         playGround = new PlayGround(this);

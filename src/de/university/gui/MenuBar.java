@@ -2,6 +2,7 @@ package de.university.gui;
 
 import de.university.gui.build.BuildDialog;
 import de.university.gui.personal.PersonalDialog;
+import de.university.data.Data;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,10 +20,11 @@ public class MenuBar extends JPanel{
     private JPanel menuPanel;
     private JPanel resPanel;
     private Font font = new Font("Monospace", Font.BOLD, 25);
+    private Data data;
 
 
     private int numberOfButtons = 5;
-    private int numberOfLabel = 5;
+    private int numberOfLabel = 4;
     private JButton[] menuButtons = new JButton[numberOfButtons];
     private JLabel[] resLabels = new JLabel[numberOfLabel];
     private ActionListener listener = new ActionListener() {
@@ -35,6 +37,24 @@ public class MenuBar extends JPanel{
 
 
     //----methods----
+
+    public void repaintResLabels(Integer i){
+        if (i == 1){
+            Integer currentProfCapacity = this.data.currentProfCapacity();
+            Integer currentProfs = this.data.getProfs().size();
+            resLabels[1].setText("Prof capacity: "+ currentProfs + "/" + currentProfCapacity + "        " );
+        }
+        if (i == 2){
+            Integer currentStudentCapacity = this.data.currentStudentCapacity();
+            resLabels[2].setText("Student capacity: "+currentStudentCapacity + "               ");
+        }
+
+        if (i == 3){
+            Integer currentWellbeingCapacity = this.data.currentWellbeingCapacity();
+            resLabels[3].setText("Wellbeing bonus: "+currentWellbeingCapacity );
+        }
+
+    }
 
     /**
      * works if one ofe the menuButtons has been pressed
@@ -59,9 +79,10 @@ public class MenuBar extends JPanel{
     //TODO method repaintResLabel(String[] data)
 
     //----constructor----
-    public MenuBar(GUI gui){
+    public MenuBar(GUI gui, Data data){
         super();
         this.gui = gui;
+        this.data = data;
         this.setLayout(new BorderLayout());
 
         //menu
@@ -90,7 +111,6 @@ public class MenuBar extends JPanel{
         menuButtons[4].setText("Menu");
 
 
-
         //resLabels
         resPanel = new JPanel(new FlowLayout());
         resPanel.setBackground(Color.GRAY);
@@ -101,9 +121,12 @@ public class MenuBar extends JPanel{
         //add the labels
         for(int i = 0; i!= numberOfLabel; ++i){
             resLabels[i] = new JLabel();
+            resLabels[i].setForeground(Color.WHITE);
+            resLabels[i].setFont(font);
+            repaintResLabels(i);
             resPanel.add(resLabels[i]);
         }
-        //TODO
+
     }
 
 }

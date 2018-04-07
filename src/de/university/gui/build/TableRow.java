@@ -19,6 +19,7 @@ public class TableRow extends JPanel{
     private JButton info;
     private JButton build;
     private Room room;
+    private Font font = new Font("Monospace", Font.BOLD, 25);
     //----methods----
 
     /**
@@ -28,15 +29,24 @@ public class TableRow extends JPanel{
         //TODO Icon
 
         this.name = new JLabel();
+        this.name.setFont(font);
         this.add(name);
         this.costs = new JLabel();
+        this.costs.setFont(font);
         this.add(costs);
         this.benefits = new JLabel();
+        this.benefits.setFont(font);
         this.add(benefits);
 
-        this.info = new JButton("info"); //TODO init with icon
+        this.info = new JButton("Info"); //TODO init with icon
+        this.info.setFont(font);
+        this.info.setBackground(Color.GRAY);
+        this.info.setForeground(Color.WHITE);
         this.add(info);
-        this.build = new JButton("build");//TODO init with icon
+        this.build = new JButton("Build");//TODO init with icon
+        this.build.setFont(font);
+        this.build.setBackground(Color.GRAY);
+        this.build.setForeground(Color.WHITE);
         this.build.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
