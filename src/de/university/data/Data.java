@@ -47,7 +47,7 @@ public class Data {
     public void build(Room room, int x, int y) {
         Room clone = new Room(room);
         buildings.add(clone);
-        System.out.println("DATA[37]: " + buildings.toString());
+
         switch (room.getSize()) {
             //there are no breaks because the bigger ones use the smaller ones
             case GIGANTIC:

@@ -113,7 +113,7 @@ public class MenuBar extends JPanel{
 
         //resLabels
         resPanel = new JPanel(new FlowLayout());
-        resPanel.setBackground(Color.GRAY);
+        resPanel.setBackground(Color.BLUE);
         resPanel.setPreferredSize(new Dimension(1000, 50));
         resPanel.setMinimumSize(new Dimension(1000, 50));
         this.add(resPanel,BorderLayout.SOUTH);
