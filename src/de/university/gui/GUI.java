@@ -5,6 +5,7 @@ import de.university.control.KeyControl;
 import de.university.data.Data;
 import de.university.data.rooms.Room;
 import de.university.gui.build.Builder;
+import de.university.gui.mainMenu.MainMenu;
 
 import javax.swing.*;
 import java.awt.*;
@@ -102,6 +103,7 @@ public class GUI extends JFrame{
 
         //----finalize----
         setVisible(true);
+        new MainMenu(this);
     }
 
     /**
