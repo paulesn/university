@@ -15,6 +15,6 @@ public class Flur extends Room{
 		this.setProfCapacity(0);
 		this.setBenefits("");
 		this.setInfo("To connect rooms.\nCosts: " + this.getCosts());
-		this.setPath("de/university/extern/Flur.png");
+		this.setPath("university/src/de/university/extern/Flur.png");
 	}
 }

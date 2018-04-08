@@ -15,6 +15,6 @@ public class Cafeteria extends Room{
 		this.setProfCapacity(0);
 		this.setBenefits("");
 		this.setInfo("For students to eat. Increases the points for wellbeing by " + this.getWellbeingBonus() + ".\nCosts: " + this.getCosts());
-		this.setPath("de/university/extern/Cafeteria.png");
+		this.setPath("university/src/de/university/extern/Cafeteria.png");
 	}
 }

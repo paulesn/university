@@ -15,6 +15,6 @@ public class Seminarraum extends Room{
 		this.setProfCapacity(0);
 		this.setBenefits("");
 		this.setInfo("For teaching smaller groups of students. Increases the points for knowledge by " + this.getKnowledgeBonus() + " and the points for wellbeing by " + this.getWellbeingBonus()  + ".\nCosts: " + this.getCosts());
-		this.setPath("de/university/extern/Seminarraum.png");
+		this.setPath("university/src/de/university/extern/Seminarraum.png");
 	}
 }

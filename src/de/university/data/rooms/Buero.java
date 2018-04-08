@@ -15,6 +15,6 @@ public class Buero extends Room{
 		this.setProfCapacity(1);
 		this.setBenefits("");
 		this.setInfo("Needed to be able to hire a new professor.\nCosts: " + this.getCosts());
-		this.setPath("de/university/extern/Büro.png");
+		this.setPath("university/src/de/university/extern/Büro.png");
 	}
 }
