@@ -3,6 +3,7 @@ package de.university.gui;
 import de.university.gui.build.BuildDialog;
 import de.university.gui.personal.PersonalDialog;
 import de.university.data.Data;
+import de.university.gui.score.Score;
 
 import javax.swing.*;
 import java.awt.*;
@@ -62,7 +63,7 @@ public class MenuBar extends JPanel{
      */
      private void buttonPressed(int i) {
         switch(i){
-            case 0: //TODO statistics
+            case 0: new Score(gui);
                 break;
             case 1: new BuildDialog(gui);
                 break;
@@ -104,7 +105,7 @@ public class MenuBar extends JPanel{
             menuButtons[i].setPreferredSize(new Dimension(150,50));
             menuPanel.add(menuButtons[i]);
         }
-        menuButtons[0].setText("Statistics");
+        menuButtons[0].setText("Score");
         menuButtons[1].setText("Build");
         menuButtons[2].setText("Research");
         menuButtons[3].setText("Personal");

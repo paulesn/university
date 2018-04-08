@@ -1,6 +1,5 @@
 package de.university.gui.personal;
 
-import com.sun.xml.internal.ws.wsdl.writer.document.soap.Body;
 import de.university.data.professors.Prof;
 import de.university.gui.GUI;
 import de.university.data.Data;
