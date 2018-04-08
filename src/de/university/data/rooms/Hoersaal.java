@@ -15,5 +15,6 @@ public class Hoersaal extends Room{
 		this.setProfCapacity(0);
 		this.setBenefits("");
 		this.setInfo("Used for instruction. Increases the points for knowledge by " + this.getKnowledgeBonus() + ", the points for wellbeing by " + this.getWellbeingBonus()+ " and the capacity of university students by " + this.getStudentCapacity() + ".\nCosts: " + this.getCosts());
+		this.setPath("de/university/extern/Hörsaal.png");
 	}
 }

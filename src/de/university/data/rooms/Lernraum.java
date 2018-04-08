@@ -15,5 +15,6 @@ public class Lernraum extends Room{
 		this.setProfCapacity(0);
 		this.setBenefits("");
 		this.setInfo("Used by students for studying. Increases the points for knowledge by " + this.getKnowledgeBonus() + " and the points for wellbeing by " + this.getWellbeingBonus()  + ".\nCosts: " + this.getCosts());
+		this.setPath("de/university/extern/Lernraum.png");
 	}
 }
