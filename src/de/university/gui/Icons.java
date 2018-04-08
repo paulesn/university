@@ -10,6 +10,7 @@ public class Icons {
     public static ImageIcon get(int x, int y, Room room){
         ImageIcon picture= new ImageIcon(room.getPath());
         ImageHandler image;
+        System.out.println(picture.toString());
         switch(room.getSize()) {
             case MICRO:
                 image = new ImageHandler(1, 1, picture);

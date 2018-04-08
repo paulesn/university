@@ -90,6 +90,7 @@ public class Data {
                 map[x][y] = clone;
         }
         gui.setButtonMode(false, null);
+
     }
 
     public GUI getGui() {
