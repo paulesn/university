@@ -5,11 +5,7 @@ import javax.swing.*;
 public class Introduction{
 
     public static void start() {
-        JDialog tutorial = new JDialog();
-        tutorial.setTitle("University: tutorial");
-        tutorial.setSize(1000,500);
-        tutorial.setModal(true);
-        tutorial.add(new JLabel("Tutorial"));
-        tutorial.setVisible(true);
+        JOptionPane.showMessageDialog(null, "Tutorial:\n Test12345");
+        //JOptionPane.showOptionDialog(null, "Tutorial:", "University", DEFAULT_OPTION,)
     }
 }
