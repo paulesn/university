@@ -15,6 +15,6 @@ public class Gras extends Room{
 		this.setProfCapacity(0);
 		this.setBenefits("");
 		this.setInfo("Increases the points for wellbeing by " + this.getWellbeingBonus()  + ".\nCosts: " + this.getCosts());
-		this.setPath("university/src/de/university/extern/Gruenflaeche.png");
+		this.setPath("datas/Gruenflaeche.png");
 	}
 }

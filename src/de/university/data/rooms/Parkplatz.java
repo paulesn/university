@@ -15,6 +15,6 @@ public class Parkplatz extends Room{
 		this.setProfCapacity(0);
 		this.setBenefits("");
 		this.setInfo("Parking spots for students. Increases the points for wellbeing by " + this.getWellbeingBonus()  + ".\nCosts: " + this.getCosts());
-		this.setPath("university/src/de/university/extern/Parkplatz.png");
+		this.setPath("datas/Parkplatz.png");
 	}
 }
