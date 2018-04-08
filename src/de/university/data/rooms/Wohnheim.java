@@ -15,5 +15,6 @@ public class Wohnheim extends Room{
 		this.setProfCapacity(0);
 		this.setBenefits("");
 		this.setInfo("A building containing living quarters for students. Increases the points for wellbeing by "+ this.getWellbeingBonus() + ".\nCosts: " + this.getCosts());
+		this.setPath("de/university/extern/Wohnheim.png");
 	}
 }

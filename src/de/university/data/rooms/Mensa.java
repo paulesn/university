@@ -15,5 +15,6 @@ public class Mensa extends Room{
 		this.setProfCapacity(0);
 		this.setBenefits("");
 		this.setInfo("For students to eat. Increases the points of wellbeing by " + this.getWellbeingBonus()  + ".\nCosts: " + this.getCosts());
+		this.setPath("de/university/extern/Mensa.png");
 	}
 }

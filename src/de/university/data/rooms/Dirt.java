@@ -14,6 +14,7 @@ public class Dirt extends Room{
         this.setStudentCapacity(0);
         this.setProfCapacity(0);
         this.setBenefits("");
-        this.setInfo("just boring dirt");
+        this.setInfo("Just boring dirt");
+        this.setPath("de/university/extern/Dirt.png");
     }
 }

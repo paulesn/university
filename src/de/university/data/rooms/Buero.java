@@ -6,7 +6,7 @@ public class Buero extends Room{
     //----constructor----
 	
 	public Buero(){
-		this.setName("Buero");
+		this.setName("Office");
 		this.setCosts(1500);
 		this.setSize(RoomSize.MICRO);
 		this.setKnowledgeBonus(0);
@@ -15,5 +15,6 @@ public class Buero extends Room{
 		this.setProfCapacity(1);
 		this.setBenefits("");
 		this.setInfo("Needed to be able to hire a new professor.\nCosts: " + this.getCosts());
+		this.setPath("de/university/extern/Büro.png");
 	}
 }
