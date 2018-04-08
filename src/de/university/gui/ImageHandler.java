@@ -30,7 +30,6 @@ public class ImageHandler {
     }
 
     public ImageIcon getImagePiece(int x, int y) {
-
         return this.pieces[x][y];
     }
 }
