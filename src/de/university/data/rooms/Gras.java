@@ -6,7 +6,7 @@ public class Gras extends Room{
     //----constructor----
 	
 	public Gras(){
-		this.setName("Gras area");
+		this.setName("Grass area");
 		this.setCosts(500);
 		this.setSize(RoomSize.MICRO);
 		this.setKnowledgeBonus(0);
@@ -15,6 +15,6 @@ public class Gras extends Room{
 		this.setProfCapacity(0);
 		this.setBenefits("");
 		this.setInfo("Increases the points for wellbeing by " + this.getWellbeingBonus()  + ".\nCosts: " + this.getCosts());
-		this.setPath("/university/src/de/university/extern/Gruenflaeche.png");
+		this.setPath("university/src/de/university/extern/Gruenflaeche.png");
 	}
 }
