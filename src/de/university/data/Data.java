@@ -47,7 +47,7 @@ public class Data {
     public void build(Room room, int x, int y) {
         Room clone = new Room(room);
         buildings.add(clone);
-        System.out.println("DATA[37]: " + buildings.toString());
+
         switch (room.getSize()) {
             //there are no breaks because the bigger ones use the smaller ones
             case GIGANTIC:
@@ -172,4 +172,52 @@ public class Data {
     public void setProfs(Prof prof) {
         this.profs.add(prof);
     }
+
+    /**
+     * removes a professor from the arraylist
+     * @param prof
+     */
+    public void deleteProf(Prof prof) {
+        this.profs.remove(prof);
+    }
+
+    /**
+     * returns the current professor capacity
+     * @return Integer
+     */
+    public Integer currentProfCapacity(){
+        Integer currentProfCapacity = 0;
+        if(!buildings.isEmpty()){
+            for (Room room: buildings) {
+                currentProfCapacity += room.getProfCapacity();
+            }
+        }
+        return currentProfCapacity;
+    }
+
+    /**
+     * returns the current Student capacity
+     * @return Integer
+     */
+    public Integer currentStudentCapacity(){
+        Integer currentStudentCapacity = 0;
+        if(!buildings.isEmpty()){
+            for (Room room: buildings) {
+                currentStudentCapacity += room.getStudentCapacity();
+            }
+        }
+        return currentStudentCapacity;
+    }
+
+    public Integer currentWellbeingCapacity(){
+        Integer currentWellbeingCapacity = 0;
+        if(!buildings.isEmpty()){
+            for (Room room: buildings) {
+                currentWellbeingCapacity += room.getWellbeingBonus();
+            }
+        }
+        return currentWellbeingCapacity;
+    }
+
+
 }
