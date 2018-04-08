@@ -30,7 +30,7 @@ public class PlayGround extends JPanel {
 
             coordX += startX;
             coordY += startY;
-            System.out.println("PlayGround[33]: "+mode);
+            System.out.println("PlayGround[33]: "+ mode);
             if (mode) {
                 clicked(coordX, coordY);//build
             } else {
