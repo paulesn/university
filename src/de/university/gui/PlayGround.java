@@ -84,6 +84,7 @@ public class PlayGround extends JPanel {
                     //not enough money
                     //TODO Message
                 }
+                render();
                 return;
             }
         }
@@ -139,6 +140,18 @@ public class PlayGround extends JPanel {
         for (int i = 0; i != x; ++i) {
             for (int o = 0; o != x; ++o) {
                 field[i][o].setBackground(Color.GRAY);
+            }
+        }
+    }
+
+    /**
+     * repaints the buttons
+     */
+    public void render() {
+        ImageIcon[][] icons = data.getIconMap();
+        for(int i = 0; i != x; ++i){
+            for(int o = 0; o!= x; ++o){
+                field[i][o].setIcon(icons[i+startX][o+startY]);
             }
         }
     }

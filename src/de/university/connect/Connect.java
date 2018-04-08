@@ -15,4 +15,8 @@ public class Connect {
     //----constructor----
     public Connect(GUI gui){
     }
+
+    private void render(){
+        gui.render();
+    }
 }

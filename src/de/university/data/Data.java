@@ -57,40 +57,52 @@ public class Data {
                 }
                 for (int i = 0; i != 4; ++i) {
                     map[x + i][y + 4] = clone;
+                    iconMap[x+i][y+4] = Icons.get(i,4,room);
                 }
             case BIGGER:
                 for (int i = 0; i != 4; ++i) {
                     map[x + 3][y + i] = clone;
+                    iconMap[x+3][y+i] = Icons.get(3,i,room);
                 }
                 for (int i = 0; i != 3; ++i) {
                     map[x + i][y + 3] = clone;
+                    iconMap[x+i][y+3] = Icons.get(i,3,room);
                 }
             case BIG:
                 //the last colum
                 map[x + 2][y] = clone;
+                iconMap[x+2][y] = Icons.get(2,0,room);
                 //--------------
                 map[x + 2][y + 1] = clone;
+                iconMap[x+2][y+1] = Icons.get(2,1,room);
                 //-------------
                 map[x + 2][y + 2] = clone;
+                iconMap[x+2][y+2] = Icons.get(2,2,room);
                 //the first two of the last row
                 map[x][y + 2] = clone;
+                iconMap[x][y+2] = Icons.get(0,2,room);
                 //----------
                 map[x + 1][y + 2] = clone;
+                iconMap[x+1][y+2] = Icons.get(1,2,room);
             case NORMAL:
                 //the two below the following
                 map[x][y + 1] = clone;
+                iconMap[x][y+1] = Icons.get(0,1,room);
                 //---------------------
                 map[x + 1][y + 1] = clone;
+                iconMap[x+1][y+1] = Icons.get(1,1,room);
 
             case SMALL:
                 //the one right next to the one you clicked at
                 map[x + 1][y] = clone;
+                iconMap[x+1][y] = Icons.get(1,0,room);
             case MICRO:
                 //the one you clicked at
                 map[x][y] = clone;
+                iconMap[x][y] = Icons.get(0,0,room);
         }
         gui.setButtonMode(false, null);
-
+        gui.render();
     }
 
     public GUI getGui() {

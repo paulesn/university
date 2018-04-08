@@ -95,4 +95,10 @@ public class GUI extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * repaints the buttons
+     */
+    public void render() {
+        playGround.render();
+    }
 }
