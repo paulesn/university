@@ -6,7 +6,7 @@ public class Flur extends Room{
     //----constructor----
 
 	public Flur(){
-		this.setName("Flur");
+		this.setName("Hallway");
 		this.setCosts(100);
 		this.setSize(RoomSize.MICRO);
 		this.setKnowledgeBonus(0);
@@ -14,7 +14,7 @@ public class Flur extends Room{
 		this.setStudentCapacity(0);
 		this.setProfCapacity(0);
 		this.setBenefits("");
-		this.setInfo("For students to eat. Increases the points for wellbeing by " + this.getWellbeingBonus() + ".\nCosts: " + this.getCosts());
+		this.setInfo("To connect rooms.\nCosts: " + this.getCosts());
 		this.setPath("de/university/extern/Flur.png");
 	}
 }
