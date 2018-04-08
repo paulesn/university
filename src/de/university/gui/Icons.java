@@ -37,7 +37,9 @@ public class Icons {
                 System.out.println(image.getImagePiece(x,y));
                 return image.getImagePiece(x,y);
             default:
-                return picture;
+                image = new ImageHandler(1, 1, picture);
+                System.out.println(image.getImagePiece(x,y));
+                return image.getImagePiece(x,y);
         }
 
     }
