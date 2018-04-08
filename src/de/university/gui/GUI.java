@@ -25,6 +25,7 @@ public class GUI extends JFrame{
     private PlayGround playGround;
     private Data data;
     private Builder builder;
+    private NavigationBar nav;
 
     //----methodes----
 
@@ -100,6 +101,10 @@ public class GUI extends JFrame{
         //playGround
         playGround = new PlayGround(this);
         mainPanel.add(playGround, BorderLayout.CENTER);
+
+        //navigation Bar
+        nav = new NavigationBar(this);
+        mainPanel.add(nav,BorderLayout.SOUTH);
 
         //----finalize----
         setVisible(true);

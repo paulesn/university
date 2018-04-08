@@ -158,14 +158,15 @@ public class PlayGround extends JPanel {
     }
 
     public void moveYourself(int x, int y) {
-        startX = x;
+        startX += x;
         if(startX<0){
             startX = 0;
         }
-        startY = y;
+        startY += y;
         if(startY<0){
             startY = 0;
         }
+        System.out.println(startX+"/"+startY);
         render();
     }
 }
