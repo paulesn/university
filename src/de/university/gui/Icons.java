@@ -7,47 +7,33 @@ import java.lang.reflect.Array;
 
 public class Icons {
 
-    public static ImageIcon get(int y, int x, Room room){
-        int sizex;
-        int sizey;
+    public static ImageIcon get(int x, int y, Room room){
         ImageIcon picture= new ImageIcon(room.getPath());
         ImageHandler image;
         switch(room.getSize()) {
             case MICRO:
                 image = new ImageHandler(1,1,picture);
-                sizex=1;
-                sizey=1;
-                return image.getImagePiece(x,y);
+                break;
             case SMALL:
                 image = new ImageHandler(1,2,picture);
-                sizex=1;
-                sizey=2;
-                return image.getImagePiece(x,y);
+                break;
             case NORMAL:
                 image = new ImageHandler(2,2,picture);
-                sizex=2;
-                sizey=2;
-                return image.getImagePiece(x,y);
+                break;
             case MEDIUM:
                 image = new ImageHandler(2,3,picture);
-                sizex=2;
-                sizey=3;
-                return image.getImagePiece(x,y);
+                break;
             case BIG:
                 image = new ImageHandler(3,3,picture);
-                sizex=3;
-                sizey=3;
-                return image.getImagePiece(x,y);
+                break;
             case BIGGER:
                 image = new ImageHandler(4,4,picture);
-                sizex=4;
-                sizey=4;
-                return image.getImagePiece(x,y);
+                break;
             default:
                 image = new ImageHandler(5,5,picture);
-                sizex=5;
-                sizey=5;
-                return image.getImagePiece(x,y);
+                break;
+
+            return image.getImagePiece(x,y);
         }
     }
 }
