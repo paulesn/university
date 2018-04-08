@@ -2,8 +2,6 @@ package de.university.control;
 
 import de.university.data.Data;
 import de.university.gui.GUI;
-import de.university.gui.build.Builder;
-import de.university.introduction.Introduction;
 /**
  * initalisiesd the whole gui and data.
  *
