@@ -6,19 +6,17 @@ package de.university.connect;
 import java.io.*;
 
 public class Client {
+    private String ip = "52.170.119.223"; // localhost ;
+    private int port = 5565;
 
     public void join(String user) throws IOException {
-        String ip = "52.170.119.223"; // localhost
-        int port = 5565;
-        java.net.Socket socket = new java.net.Socket(ip,port); // verbindet sich mit Server
+        java.net.Socket socket = new java.net.Socket(this.ip,this.port); // verbindet sich mit Server
         String zuSendendeNachricht = "join-"+user;
         schreibeNachricht(socket, zuSendendeNachricht);
     }
 
     public void score(String user, int score) throws IOException{
-        String ip = "52.170.119.223"; // localhost
-        int port = 5565;
-        java.net.Socket socket = new java.net.Socket(ip,port); // verbindet sich mit Server
+        java.net.Socket socket = new java.net.Socket(this.ip,this.port); // verbindet sich mit Server
         String zuSendendeNachricht = "score-"+user+"-"+score;
         schreibeNachricht(socket, zuSendendeNachricht);
     }
