@@ -3,6 +3,7 @@ package de.university.gui.personal;
 import de.university.data.professors.Prof;
 import de.university.gui.GUI;
 import de.university.data.Data;
+import de.university.gui.MenuBar;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,6 +13,7 @@ import java.awt.event.ActionListener;
 public class HireingTableRow extends JPanel{
     //----variables----
     private GUI gui;
+    private MenuBar menuBar;
     private Prof prof;
     private JLabel name;
     private JLabel costs;
@@ -26,11 +28,26 @@ public class HireingTableRow extends JPanel{
     private ActionListener listener = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.out.println("HireingTableRow 27:"+ "setProfs");
-            data.setProfs(prof);
-            dialog.dispose();
-            dialog1.profDisplay();
-            dialog1.repaint();
+            if(data.currentProfCapacity() > data.getProfs().size()){
+                data.setProfs(prof);
+                menuBar = gui.getGuiMenuBar();
+
+                menuBar.repaintResLabels(1);
+                dialog.dispose();
+                dialog1.dispose();
+                new PersonalDialog(gui);
+            }else{
+                UIManager.put("OptionPane.minimumSize",new Dimension(200,200));
+                UIManager.put("OptionPane.messageFont", font);
+                UIManager.put("OptionPane.buttonFont", font);
+                UIManager.put("Button.background", Color.GRAY);
+                UIManager.put("Button.foreground", Color.WHITE);
+                JOptionPane.showMessageDialog(dialog,
+                        "Cant hire new professor, not enough rooms",
+                        "Warning",
+                        JOptionPane.WARNING_MESSAGE);
+            }
+
 
 
         }
