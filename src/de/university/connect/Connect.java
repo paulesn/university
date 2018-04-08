@@ -14,11 +14,5 @@ public class Connect {
 
     //----constructor----
     public Connect(GUI gui){
-        this.gui = gui;
-        try {
-            socket = new Socket("52.170.119.223",5565);
-        } catch (IOException e) {
-        }
-        socket.
     }
 }
