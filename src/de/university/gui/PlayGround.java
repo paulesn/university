@@ -1,5 +1,6 @@
 package de.university.gui;
 
+import de.university.control.KeyControl;
 import de.university.data.Data;
 import de.university.data.rooms.Room;
 import de.university.gui.build.Builder;
@@ -154,5 +155,17 @@ public class PlayGround extends JPanel {
                 field[i][o].setIcon(icons[i+startX][o+startY]);
             }
         }
+    }
+
+    public void moveYourself(int x, int y) {
+        startX = x;
+        if(startX<0){
+            startX = 0;
+        }
+        startY = y;
+        if(startY<0){
+            startY = 0;
+        }
+        render();
     }
 }

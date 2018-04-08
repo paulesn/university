@@ -1,6 +1,7 @@
 package de.university.control;
 
 import de.university.data.Data;
+import de.university.gui.GUI;
 import de.university.gui.build.Builder;
 import de.university.introduction.Introduction;
 /**
@@ -12,8 +13,6 @@ public class Control {
     public static void main(String[] args){
         //TODO init stuff
         Data data = new Data(100);
-        new de.university.gui.GUI(data);
-        Introduction intro = new Introduction();
-        intro.start();
+        GUI gui = new de.university.gui.GUI(data);
     }
 }

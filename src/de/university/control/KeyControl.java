@@ -1,15 +1,34 @@
 package de.university.control;
 
-import javax.swing.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import de.university.gui.GUI;
 
-public class KeyControl extends JFrame implements KeyListener{
+import java.awt.*;
+import java.awt.event.*;
+
+public class KeyControl extends KeyAdapter {
+    private GUI gui;
+
+    public KeyControl(GUI gui) {
+        this.gui = gui;
+    }
+
 
     @Override
     public void keyTyped(KeyEvent e) {
+        System.out.println("Key: "+e.getKeyCode());
         switch(e.getKeyCode()){
-            case KeyEvent.VK_UP: //TODO
+            case KeyEvent.VK_UP:
+              gui.movePlayGround(0,1);
+                break;
+            case KeyEvent.VK_DOWN:
+                gui.movePlayGround(0,-1);
+                break;
+            case KeyEvent.VK_LEFT:
+                gui.movePlayGround(1,0);
+                break;
+            case KeyEvent.VK_RIGHT:
+                gui.movePlayGround(-1,0);
+                break;
         }
     }
 

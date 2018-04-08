@@ -6,23 +6,23 @@ package de.university.connect;
 import java.io.*;
 
 public class Client {
-    public static void main(String[] args) {
-        Client client = new Client();
-        try {
-            client.test();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    void test() throws IOException {
-        String ip = "127.0.0.1"; // localhost
+
+    public void join(String user) throws IOException {
+        String ip = "52.170.119.223"; // localhost
         int port = 5565;
         java.net.Socket socket = new java.net.Socket(ip,port); // verbindet sich mit Server
-        String zuSendendeNachricht = "Test";
+        String zuSendendeNachricht = "join-"+user;
         schreibeNachricht(socket, zuSendendeNachricht);
-        String empfangeneNachricht = leseNachricht(socket);
-        System.out.println(empfangeneNachricht);
     }
+
+    public void score(String user, int score) throws IOException{
+        String ip = "52.170.119.223"; // localhost
+        int port = 5565;
+        java.net.Socket socket = new java.net.Socket(ip,port); // verbindet sich mit Server
+        String zuSendendeNachricht = "score-"+user+"-"+score;
+        schreibeNachricht(socket, zuSendendeNachricht);
+    }
+
     void schreibeNachricht(java.net.Socket socket, String nachricht) throws IOException {
         PrintWriter printWriter =
                 new PrintWriter(
