@@ -103,7 +103,7 @@ public class GUI extends JFrame{
 
         //----finalize----
         setVisible(true);
-        new MainMenu(this);
+        //new MainMenu(this);
     }
 
     /**
@@ -115,5 +115,14 @@ public class GUI extends JFrame{
 
     public void movePlayGround(int x, int y) {
         playGround.moveYourself(x, y);
+    }
+
+    public void computeRound() {
+        menuBar.repaintResLabels(1);
+        menuBar.repaintResLabels(2);
+        menuBar.repaintResLabels(3);
+        menuBar.repaintResLabels(4);
+        data.increaseStudents();
+        data.payDept();
     }
 }

@@ -16,8 +16,9 @@ public class Data {
     private ImageIcon[][] iconMap;
     private ArrayList<Prof> profs = new ArrayList<Prof>();
     private ArrayList<Room> buildings = new ArrayList<Room>();
-    private int money = 10000000;
+    private int money = 18000;
     private final int size;
+    private int currentNumberOfStudents;
     //----methods----
 
     public void addGUI(GUI gui) {
@@ -105,6 +106,18 @@ public class Data {
         gui.render();
     }
 
+    public void increaseStudents(){
+        currentNumberOfStudents+= currentWellbeingCapacity();
+        int temp = (int)(Math.random()*100);
+        currentNumberOfStudents -= temp;
+        if(currentNumberOfStudents>currentStudentCapacity()){
+            currentNumberOfStudents = currentStudentCapacity();
+        }
+        if(currentNumberOfStudents<0){
+            currentNumberOfStudents = 0;
+        }
+    }
+
     public GUI getGui() {
         return gui;
     }
@@ -166,6 +179,11 @@ public class Data {
 
     public void setMoney(int money) {
         this.money = money;
+    }
+
+    public void payDept(){
+       money += 10*currentNumberOfStudents;
+       money -= 500*profs.size();
     }
 
     /**
@@ -233,4 +251,7 @@ public class Data {
     }
 
 
+    public Integer currentNumberOfStudents() {
+        return currentNumberOfStudents;
+    }
 }

@@ -1,5 +1,6 @@
 package de.university.gui.mainMenu;
 
+import de.university.connect.Client;
 import de.university.data.Data;
 import de.university.data.professors.Prof;
 import de.university.gui.GUI;
@@ -11,22 +12,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class MainMenu extends JDialog {
     private MainMenu me;
     private GUI gui;
-    private JPanel colums;
-    private JLabel[] titles = new JLabel[6];
-    private JPanel pane;
-    private JPanel pane1;
-    private JPanel pane2;
-    private JScrollPane sPane;
-    private Font font = new Font("Monospace", Font.BOLD, 25);
     private Data data;
-    private ArrayList<Prof> profs;
-    private String profcount;
-    private JLabel labelProfCount = new JLabel("", SwingConstants.CENTER);
+
+    private JPanel panel = new JPanel(new GridLayout(0,1));
+    private JButton singleplayer = new JButton("Singleplayer");
+    private JTextField username = new JTextField("Username");
+    private JButton multiplayer = new JButton("Multiplayer");
+    private JButton credits = new JButton("Credits");
 
     private ActionListener listener = new ActionListener() {
         @Override
@@ -43,8 +41,37 @@ public class MainMenu extends JDialog {
         this.setMinimumSize(new Dimension(700,800));
         this.setPreferredSize(new Dimension(700,800));
         this.setLocationRelativeTo(this.gui);
-        //this.setLayout(new GridLayout(0,1));
-        //init();
+
+        //init
+        add(panel);
+        panel.add(singleplayer);
+        singleplayer.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                gui.setVisible(true);
+                dispose();
+                new de.university.control.Timer(gui).run();
+            }
+        });
+        panel.add(username);
+        panel.add(multiplayer);
+        multiplayer.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    new Client().join(username.getText());
+                } catch (IOException e1) {
+                }
+            }
+        });
+        panel.add(credits);
+        credits.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //TODO
+            }
+        });
+
 
         this.setVisible(true);
         this.addWindowListener(new WindowAdapter() {
@@ -54,13 +81,6 @@ public class MainMenu extends JDialog {
             }
         });
 
-
-        /*
-        in the build mode the build dialog will be closed and the buttens will be colored:
-        red cant click here
-        green can click here
-        blue: this buttons will be the room if you click on that below you're cursor XD
-         */
     }
 
 }

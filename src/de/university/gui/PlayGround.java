@@ -134,7 +134,7 @@ public class PlayGround extends JPanel {
 
     //TODO maybe deleate
     public void dyeButton(int x, int y, Color c) {
-        field[x][y].setBackground(new Color(86, 57, 14));
+        field[x][y].setBackground(c);
     }
     //TODO maybe deleate
     public void dyeBack() {

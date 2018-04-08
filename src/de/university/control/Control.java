@@ -12,5 +12,6 @@ public class Control {
         //TODO init stuff
         Data data = new Data(100);
         GUI gui = new de.university.gui.GUI(data);
+        new Timer(gui).run();
     }
 }

@@ -25,7 +25,7 @@ public class MenuBar extends JPanel{
 
 
     private int numberOfButtons = 5;
-    private int numberOfLabel = 4;
+    private int numberOfLabel = 5;
     private JButton[] menuButtons = new JButton[numberOfButtons];
     private JLabel[] resLabels = new JLabel[numberOfLabel];
     private ActionListener listener = new ActionListener() {
@@ -43,16 +43,22 @@ public class MenuBar extends JPanel{
         if (i == 1){
             Integer currentProfCapacity = this.data.currentProfCapacity();
             Integer currentProfs = this.data.getProfs().size();
-            resLabels[1].setText("Prof capacity: "+ currentProfs + "/" + currentProfCapacity + "        " );
+            resLabels[1].setText("Prof capacity: "+ currentProfs + "/" + currentProfCapacity + " " );
         }
         if (i == 2){
             Integer currentStudentCapacity = this.data.currentStudentCapacity();
-            resLabels[2].setText("Student capacity: "+currentStudentCapacity + "               ");
+            Integer currentStudents = this.data.currentNumberOfStudents();
+            resLabels[2].setText("Student capacity: "+currentStudents+"/"+currentStudentCapacity + " ");
         }
 
         if (i == 3){
             Integer currentWellbeingCapacity = this.data.currentWellbeingCapacity();
-            resLabels[3].setText("Wellbeing bonus: "+currentWellbeingCapacity );
+            resLabels[3].setText("Wellbeing bonus: "+currentWellbeingCapacity + " " );
+        }
+
+        if (i == 4){
+            Integer currentMoney = this.data.getMoney();
+            resLabels[4].setText("$: "+currentMoney );
         }
 
     }
@@ -120,7 +126,7 @@ public class MenuBar extends JPanel{
         this.add(resPanel,BorderLayout.SOUTH);
 
         //add the labels
-        for(int i = 0; i!= numberOfLabel; ++i){
+        for(int i = 1; i!= numberOfLabel; ++i){
             resLabels[i] = new JLabel();
             resLabels[i].setForeground(Color.WHITE);
             resLabels[i].setFont(font);
