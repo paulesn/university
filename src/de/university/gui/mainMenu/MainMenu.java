@@ -55,15 +55,15 @@ public class MainMenu extends JDialog {
         });
         panel.add(username);
         panel.add(multiplayer);
-        multiplayer.addActionListener(new ActionListener() {
+       /* multiplayer.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
+               try {
                     new Client().join(username.getText());
                 } catch (IOException e1) {
                 }
             }
-        });
+        });*/
         panel.add(credits);
         credits.addActionListener(new ActionListener() {
             @Override

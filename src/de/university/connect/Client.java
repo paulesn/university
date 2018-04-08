@@ -6,21 +6,23 @@ package de.university.connect;
 import java.io.*;
 
 public class Client {
-    private String ip = "217.110.66.86"; // Seb ;
-    private int port = 5565;
-
-    public void join(String user) throws IOException {
-        java.net.Socket socket = new java.net.Socket(this.ip, this.port); // verbindet sich mit Server
-        String zuSendendeNachricht = "join-" + user;
-        schreibeNachricht(socket, zuSendendeNachricht);
+    public static void main(String[] args) {
+        Client client = new Client();
+        try {
+            client.test();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-
-    public void score(String user, int score) throws IOException {
-        java.net.Socket socket = new java.net.Socket(this.ip, this.port); // verbindet sich mit Server
-        String zuSendendeNachricht = "score-" + user + "-" + score;
+    void test() throws IOException {
+        String ip = "127.0.0.1"; // localhost
+        int port = 5565;
+        java.net.Socket socket = new java.net.Socket(ip,port); // verbindet sich mit Server
+        String zuSendendeNachricht = "Test";
         schreibeNachricht(socket, zuSendendeNachricht);
+        String empfangeneNachricht = leseNachricht(socket);
+        System.out.println(empfangeneNachricht);
     }
-
     void schreibeNachricht(java.net.Socket socket, String nachricht) throws IOException {
         PrintWriter printWriter =
                 new PrintWriter(
@@ -29,7 +31,6 @@ public class Client {
         printWriter.print(nachricht);
         printWriter.flush();
     }
-
     String leseNachricht(java.net.Socket socket) throws IOException {
         BufferedReader bufferedReader =
                 new BufferedReader(
@@ -40,14 +41,4 @@ public class Client {
         String nachricht = new String(buffer, 0, anzahlZeichen);
         return nachricht;
     }
-
-    public static void main(String[] args) {
-        Client client = new Client();
-        try {
-            client.join("I am the Server");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
 }
